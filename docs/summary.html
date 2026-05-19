@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Summary</title>
+  <style>
+:root { color-scheme: light dark; --border:#d7d7d7; --muted:#666; --card:#fff; --bg:#f5f5f5; --text:#111; --hover:rgba(127,127,127,0.16); --active:rgba(127,127,127,0.24); --link-hover:#0645ad; --link-hover-bg:#eef5ff; }
+@media (prefers-color-scheme: dark) { :root { --border:#333; --muted:#aaa; --card:#171717; --bg:#0e0e0e; --text:#eee; --hover:rgba(255,255,255,0.12); --active:rgba(255,255,255,0.18); --link-hover:#8cc8ff; --link-hover-bg:#10283d; } }
+* { box-sizing: border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
+header { padding:20px 24px; background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:2; }
+h1 { margin:0 0 8px; font-size:24px; }
+nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+nav a { color:inherit; text-decoration:none; border:1px solid var(--border); padding:5px 8px; border-radius:999px; background:var(--bg); font-size:12px; line-height:1.2; transition:background .15s ease, border-color .15s ease, transform .15s ease; }
+nav a:hover, nav a:focus { background:var(--hover); border-color:var(--muted); text-decoration:none; }
+nav a.active { background:var(--active); border-color:var(--muted); font-weight:700; }
+main { padding:20px; max-width:1200px; margin:0 auto; }
+a { text-underline-offset:3px; }
+a:hover, a:focus { text-decoration:underline; }
+.summary { color:var(--muted); font-size:13px; }
+.filters { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 14px; }
+.filters input, .filters select { padding:6px 8px; border:1px solid var(--border); border-radius:8px; min-width:170px; background:var(--card); color:var(--text); font-size:13px; }
+.event-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:12px; }
+.card h2 { margin:0 0 7px; font-size:16px; line-height:1.25; }
+.meta { color:var(--muted); font-size:13px; line-height:1.45; }
+.status { display:inline-block; margin-top:8px; padding:3px 7px; border-radius:999px; font-size:11px; border:1px solid var(--border); }
+.status-sold-out, .status-cancelled { background:#7f1d1d; color:white; border-color:#7f1d1d; }
+.status-wait-list { background:#92400e; color:white; border-color:#92400e; }
+.status-available { background:#14532d; color:white; border-color:#14532d; }
+.card a { color:inherit; }
+.card a:hover, .card a:focus, .agenda-table a:hover, .agenda-table a:focus, td a:hover, td a:focus { color:var(--link-hover); background:var(--link-hover-bg); text-decoration:underline; text-decoration-thickness:2px; outline:2px solid transparent; border-radius:3px; }
+.group-heading { margin:24px 0 8px; font-size:19px; }
+.empty { padding:16px; border:1px dashed var(--border); border-radius:12px; color:var(--muted); font-size:13px; }
+.table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:14px; }
+.agenda-table { table-layout:fixed; width:100%; }
+.agenda-table col.col-link { width:52%; }
+.agenda-table col.col-date { width:24%; }
+.agenda-table col.col-venue { width:24%; }
+.agenda-table th, .agenda-table td { padding:5px 7px; font-size:12px; }
+.agenda-table a { color:inherit; }
+.agenda-mobile-venue { display:none; margin-top:3px; color:var(--muted); font-size:11px; line-height:1.3; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th, td { padding:7px 9px; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+th { background:var(--bg); }
+tbody tr:nth-child(even) { background:rgba(127,127,127,0.08); }
+tbody tr:nth-child(odd) { background:transparent; }
+tbody tr:hover, tbody tr:focus-within { background:var(--hover); }
+tr:last-child td { border-bottom:0; }
+@media (max-width: 700px) {
+  .agenda-table col.col-link { width:62%; }
+  .agenda-table col.col-date { width:38%; }
+  .agenda-table col.col-venue { width:0; }
+  .agenda-table th:nth-child(3), .agenda-table td:nth-child(3) { display:none; }
+  .agenda-table th, .agenda-table td { font-size:11px; padding:5px 6px; }
+  .agenda-mobile-venue { display:block; }
+}
+.back-to-top { position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:3; color:inherit; text-decoration:none; border:1px solid var(--border); background:var(--card); padding:7px 10px; border-radius:999px; font-size:12px; box-shadow:0 2px 10px rgba(0,0,0,.12); }
+.back-to-top:hover, .back-to-top:focus { background:var(--hover); border-color:var(--muted); text-decoration:none; }
+</style>
+</head>
+<body id="top">
+<header>
+  <h1>Summary</h1>
+  <div class="summary">1237 events. Generated 19 May 2026, 9:39 PM.</div>
+  <nav>
+    <a href="summary.html">Summary</a>
+    <a href="next-four-weeks-canberra-queanbeyan.html">CBR/QBN next 4 weeks</a>
+    <a href="next-four-weeks.html">Next 4 weeks</a>
+    <a href="index.html">All Upcoming</a>
+    <a href="sold-out.html">Sold out / wait list</a>
+    <a href="by-location.html">By location</a>
+    <a href="events.json">Raw JSON</a>
+  </nav>
+</header>
+<main>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Venue</th>
+            <th>Scraper</th>
+            <th>Items captured</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Albury</td><td>Beer DeLuxe Albury</td><td>oztix</td><td>6</td></tr>
+<tr><td>Canberra</td><td>APH - Great Hall, Australian Parliament House</td><td>humanitix</td><td>1</td></tr>
+<tr><td>Canberra</td><td>APH - Parliament House</td><td>humanitix</td><td>1</td></tr>
+<tr><td>Canberra</td><td>APH - Parliament House Beehives</td><td>humanitix</td><td>1</td></tr>
+<tr><td>Canberra</td><td>APH - Presiding Officer&#x27;s Exhibition Space</td><td>humanitix</td><td>1</td></tr>
+<tr><td>Canberra</td><td>Belco Arts</td><td>ticketsearch</td><td>20</td></tr>
+<tr><td>Canberra</td><td>Canberra Theatre Centre</td><td>canberra_theatre_centre</td><td>68</td></tr>
+<tr><td>Canberra</td><td>Dissent Cafe and Bar</td><td>humanitix</td><td>21</td></tr>
+<tr><td>Canberra</td><td>Fiction Club</td><td>intix_org</td><td>7</td></tr>
+<tr><td>Canberra</td><td>Fun Time Pony</td><td>oztix</td><td>4</td></tr>
+<tr><td>Canberra</td><td>Gang Gang Cafe</td><td>humanitix</td><td>8</td></tr>
+<tr><td>Canberra</td><td>GIO Stadium Canberra</td><td>gio_stadium_canberra</td><td>9</td></tr>
+<tr><td>Canberra</td><td>Live At The Polo</td><td>humanitix</td><td>2</td></tr>
+<tr><td>Canberra</td><td>Llewellyn Hall</td><td>llewellyn</td><td>17</td></tr>
+<tr><td>Canberra</td><td>NFSA Arc Cinema</td><td>nfsa_arc_cinema</td><td>110</td></tr>
+<tr><td>Canberra</td><td>One22</td><td>intix_org</td><td>5</td></tr>
+<tr><td>Canberra</td><td>Shadows</td><td>whatslively</td><td>5</td></tr>
+<tr><td>Canberra</td><td>Smith&#x27;s Alternative</td><td>smiths_alternative</td><td>137</td></tr>
+<tr><td>Canberra</td><td>Street Theatre - Street 1</td><td>patronbase</td><td>15</td></tr>
+<tr><td>Canberra</td><td>Street Theatre - Street 2 - Unreserved</td><td>patronbase</td><td>4</td></tr>
+<tr><td>Canberra</td><td>The Baso</td><td>oztix</td><td>25</td></tr>
+<tr><td>Canberra</td><td>UC Hub</td><td>moshtix</td><td>3</td></tr>
+<tr><td>Canberra</td><td>UC Refectory</td><td>moshtix</td><td>2</td></tr>
+<tr><td>Queanbeyan</td><td>Royal Hotel Queanbeyan</td><td>royal_hotel_qbn</td><td>20</td></tr>
+<tr><td>Queanbeyan</td><td>The Q</td><td>ticketsearch</td><td>32</td></tr>
+<tr><td>Sydney</td><td>Crowbar Sydney</td><td>oztix</td><td>32</td></tr>
+<tr><td>Sydney</td><td>Enmore Theatre</td><td>century</td><td>77</td></tr>
+<tr><td>Sydney</td><td>Factory Theatre</td><td>century</td><td>77</td></tr>
+<tr><td>Sydney</td><td>ICC Sydney</td><td>icc_sydney</td><td>72</td></tr>
+<tr><td>Sydney</td><td>Liberty Hall</td><td>moshtix</td><td>29</td></tr>
+<tr><td>Sydney</td><td>Manning Bar</td><td>century</td><td>22</td></tr>
+<tr><td>Sydney</td><td>Metro Theatre</td><td>century</td><td>50</td></tr>
+<tr><td>Sydney</td><td>Oxford Art Factory - Gallery Bar</td><td>moshtix</td><td>29</td></tr>
+<tr><td>Sydney</td><td>Oxford Art Factory - Main Room</td><td>moshtix</td><td>39</td></tr>
+<tr><td>Sydney</td><td>Qudos Bank Arena</td><td>qudos_bank_arena</td><td>29</td></tr>
+<tr><td>Sydney</td><td>Sydney Coliseum Theatre</td><td>sydney_coliseum</td><td>24</td></tr>
+<tr><td>Sydney</td><td>Sydney Opera House</td><td>sydney_opera_house</td><td>59</td></tr>
+<tr><td>Sydney</td><td>UNSW Roundhouse</td><td>moshtix</td><td>22</td></tr>
+<tr><td>Wollongong</td><td>Anita&#x27;s Theatre</td><td>ticketmaster</td><td>55</td></tr>
+<tr><td>Wollongong</td><td>La La La&#x27;s</td><td>moshtix</td><td>41</td></tr>
+<tr><td>Wollongong</td><td>University of Wollongong</td><td>moshtix</td><td>13</td></tr>
+<tr><td>Wollongong</td><td>Waves Wollongong</td><td>moshtix</td><td>5</td></tr>
+<tr><td>Wollongong</td><td>WIN Entertainment Centre</td><td>wsec</td><td>10</td></tr>
+<tr><td>Wollongong</td><td>WIN Sports &amp; Entertainment Centres</td><td>wsec</td><td>27</td></tr>
+<tr><td>Wollongong</td><td>WIN Stadium</td><td>wsec</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+</main>
+<a class="back-to-top" href="#top">Back to top</a>
+<script>
+const currentFile = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('nav a').forEach(link => {
+  const hrefFile = link.getAttribute('href').split('/').pop();
+  if (hrefFile === currentFile) link.classList.add('active');
+});
+const search = document.querySelector('#search');
+const city = document.querySelector('#city');
+const status = document.querySelector('#status');
+function applyFilters() {
+  document.querySelectorAll('.card').forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const matchesSearch = !search || text.includes(search.value.toLowerCase());
+    const matchesCity = !city || !city.value || card.dataset.city === city.value;
+    const matchesStatus = !status || !status.value || card.dataset.status === status.value;
+    card.style.display = matchesSearch && matchesCity && matchesStatus ? '' : 'none';
+  });
+}
+[search, city, status].forEach(el => el && el.addEventListener('input', applyFilters));
+</script>
+</body>
+</html>

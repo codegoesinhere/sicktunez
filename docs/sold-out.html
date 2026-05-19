@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sold out / wait list</title>
+  <style>
+:root { color-scheme: light dark; --border:#d7d7d7; --muted:#666; --card:#fff; --bg:#f5f5f5; --text:#111; --hover:rgba(127,127,127,0.16); --active:rgba(127,127,127,0.24); --link-hover:#0645ad; --link-hover-bg:#eef5ff; }
+@media (prefers-color-scheme: dark) { :root { --border:#333; --muted:#aaa; --card:#171717; --bg:#0e0e0e; --text:#eee; --hover:rgba(255,255,255,0.12); --active:rgba(255,255,255,0.18); --link-hover:#8cc8ff; --link-hover-bg:#10283d; } }
+* { box-sizing: border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
+header { padding:20px 24px; background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:2; }
+h1 { margin:0 0 8px; font-size:24px; }
+nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+nav a { color:inherit; text-decoration:none; border:1px solid var(--border); padding:5px 8px; border-radius:999px; background:var(--bg); font-size:12px; line-height:1.2; transition:background .15s ease, border-color .15s ease, transform .15s ease; }
+nav a:hover, nav a:focus { background:var(--hover); border-color:var(--muted); text-decoration:none; }
+nav a.active { background:var(--active); border-color:var(--muted); font-weight:700; }
+main { padding:20px; max-width:1200px; margin:0 auto; }
+a { text-underline-offset:3px; }
+a:hover, a:focus { text-decoration:underline; }
+.summary { color:var(--muted); font-size:13px; }
+.filters { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 14px; }
+.filters input, .filters select { padding:6px 8px; border:1px solid var(--border); border-radius:8px; min-width:170px; background:var(--card); color:var(--text); font-size:13px; }
+.event-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:12px; }
+.card h2 { margin:0 0 7px; font-size:16px; line-height:1.25; }
+.meta { color:var(--muted); font-size:13px; line-height:1.45; }
+.status { display:inline-block; margin-top:8px; padding:3px 7px; border-radius:999px; font-size:11px; border:1px solid var(--border); }
+.status-sold-out, .status-cancelled { background:#7f1d1d; color:white; border-color:#7f1d1d; }
+.status-wait-list { background:#92400e; color:white; border-color:#92400e; }
+.status-available { background:#14532d; color:white; border-color:#14532d; }
+.card a { color:inherit; }
+.card a:hover, .card a:focus, .agenda-table a:hover, .agenda-table a:focus, td a:hover, td a:focus { color:var(--link-hover); background:var(--link-hover-bg); text-decoration:underline; text-decoration-thickness:2px; outline:2px solid transparent; border-radius:3px; }
+.group-heading { margin:24px 0 8px; font-size:19px; }
+.empty { padding:16px; border:1px dashed var(--border); border-radius:12px; color:var(--muted); font-size:13px; }
+.table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:14px; }
+.agenda-table { table-layout:fixed; width:100%; }
+.agenda-table col.col-link { width:52%; }
+.agenda-table col.col-date { width:24%; }
+.agenda-table col.col-venue { width:24%; }
+.agenda-table th, .agenda-table td { padding:5px 7px; font-size:12px; }
+.agenda-table a { color:inherit; }
+.agenda-mobile-venue { display:none; margin-top:3px; color:var(--muted); font-size:11px; line-height:1.3; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th, td { padding:7px 9px; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+th { background:var(--bg); }
+tbody tr:nth-child(even) { background:rgba(127,127,127,0.08); }
+tbody tr:nth-child(odd) { background:transparent; }
+tbody tr:hover, tbody tr:focus-within { background:var(--hover); }
+tr:last-child td { border-bottom:0; }
+@media (max-width: 700px) {
+  .agenda-table col.col-link { width:62%; }
+  .agenda-table col.col-date { width:38%; }
+  .agenda-table col.col-venue { width:0; }
+  .agenda-table th:nth-child(3), .agenda-table td:nth-child(3) { display:none; }
+  .agenda-table th, .agenda-table td { font-size:11px; padding:5px 6px; }
+  .agenda-mobile-venue { display:block; }
+}
+.back-to-top { position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:3; color:inherit; text-decoration:none; border:1px solid var(--border); background:var(--card); padding:7px 10px; border-radius:999px; font-size:12px; box-shadow:0 2px 10px rgba(0,0,0,.12); }
+.back-to-top:hover, .back-to-top:focus { background:var(--hover); border-color:var(--muted); text-decoration:none; }
+</style>
+</head>
+<body id="top">
+<header>
+  <h1>Sold out / wait list</h1>
+  <div class="summary">32 events. Generated 19 May 2026, 9:39 PM.</div>
+  <nav>
+    <a href="summary.html">Summary</a>
+    <a href="next-four-weeks-canberra-queanbeyan.html">CBR/QBN next 4 weeks</a>
+    <a href="next-four-weeks.html">Next 4 weeks</a>
+    <a href="index.html">All Upcoming</a>
+    <a href="sold-out.html">Sold out / wait list</a>
+    <a href="by-location.html">By location</a>
+    <a href="events.json">Raw JSON</a>
+  </nav>
+</header>
+<main>
+
+    <div class="filters">
+      <input id="search" type="search" placeholder="Search events, venues, cities">
+      <select id="city"><option value="">All cities</option><option value="Canberra">Canberra</option><option value="Sydney">Sydney</option><option value="Wollongong">Wollongong</option></select>
+      <select id="status"><option value="">All statuses</option><option value="cancelled">cancelled</option><option value="sold out">sold out</option><option value="wait list">wait list</option></select>
+    </div>
+    <section class="event-grid">
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
+      <h2><a href="https://www.enmoretheatre.com.au/event/of-monsters-and-men/" target="_blank" rel="noopener">OF MONSTERS AND MEN</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 19 May 2026</div>
+        
+        <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="NFSA Arc Cinema" data-status="sold out">
+      <h2><a href="https://tickets.nfsa.gov.au/Events/Science-Art-Film-Nausicaa-of-the-Valley-of-the-Wind" target="_blank" rel="noopener">Science Art Film Nausicaa of the Valley of the Wind</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Wed 20 May 2026</div>
+        <div><strong>Time:</strong> 6:00 PM</div>
+        <div><strong>Venue:</strong> NFSA Arc Cinema</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="wait list">
+      <h2><a href="https://www.metrotheatre.com.au/event/wings-x-metro-a-i-r-baaqiy-a-d-atelier/" target="_blank" rel="noopener">METRO A.i.R X WINGS: BAAQIY</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Wed 20 May 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="cancelled">
+      <h2><a href="https://www.enmoretheatre.com.au/event/spin-doctors-35-years-of-pocket-full-of-kryptonite/" target="_blank" rel="noopener">SPIN DOCTORS – 35 YEARS OF POCKET FULL OF KRYPTONITE - CANCELLED</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 21 May 2026</div>
+        
+        <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-cancelled">cancelled</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="cancelled">
+      <h2><a href="https://www.factorytheatre.com.au/event/judith-hill-2/" target="_blank" rel="noopener">JUDITH HILL - CANCELLED</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 21 May 2026</div>
+        
+        <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-cancelled">cancelled</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="sold out">
+      <h2><a href="https://www.factorytheatre.com.au/event/pop-culture-parenting-podcast/" target="_blank" rel="noopener">POP CULTURE PARENTING PODCAST</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 22 May 2026</div>
+        
+        <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="wait list">
+      <h2><a href="https://www.metrotheatre.com.au/event/picture-this/" target="_blank" rel="noopener">PICTURE THIS</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 22 May 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
+      <h2><a href="https://www.enmoretheatre.com.au/event/hot-dub-time-machine-pres-house-party/" target="_blank" rel="noopener">HOT DUB TIME MACHINE PRES. HOUSE PARTY</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 23 May 2026</div>
+        
+        <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="wait list">
+      <h2><a href="https://www.factorytheatre.com.au/event/eskimo-joe-20-years-of-black-fingernails-red-wine/" target="_blank" rel="noopener">ESKIMO JOE - 20 YEARS OF BLACK FINGERNAILS RED WINE with special</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 23 May 2026</div>
+        
+        <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Manning Bar" data-status="cancelled">
+      <h2><a href="https://www.manningbar.com/event/the-9075-a-tribute-to-the-1975/" target="_blank" rel="noopener">The 9075: A TRIBUTE TO THE 1975 - CANCELLED</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 23 May 2026</div>
+        
+        <div><strong>Venue:</strong> Manning Bar</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-cancelled">cancelled</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="cancelled">
+      <h2><a href="https://www.factorytheatre.com.au/event/the-midwives-2/" target="_blank" rel="noopener">THE MIDWIVES - CANCELLED</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 30 May 2026</div>
+        
+        <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-cancelled">cancelled</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Gang Gang Cafe" data-status="sold out">
+      <h2><a href="https://events.humanitix.com/purelink-nyc-w-umki-and-discobais/tickets" target="_blank" rel="noopener">Purelink (NYC) w/ Umki and Discobasis</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 31 May 2026</div>
+        
+        <div><strong>Venue:</strong> Gang Gang Cafe</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="UNSW Roundhouse" data-status="sold out">
+      <h2><a href="https://www.moshtix.com.au/v2/event/higher-grnd-radar-presents-notion-uk-sold-out/191601" target="_blank" rel="noopener">Higher Grnd &amp; Radar presents Notion (UK) *SOLD OUT*</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 5 Jun 2026</div>
+        <div><strong>Time:</strong> 8:00 PM</div>
+        <div><strong>Venue:</strong> UNSW Roundhouse</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="wait list">
+      <h2><a href="https://www.metrotheatre.com.au/event/balu-brigada/" target="_blank" rel="noopener">BALU BRIGADA</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 5 Jun 2026 - Sat 6 Jun 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="sold out">
+      <h2><a href="https://www.metrotheatre.com.au/event/xaviersobased/" target="_blank" rel="noopener">XAVIERSOBASED</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 7 Jun 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Wollongong" data-venue="Anita&#x27;s Theatre" data-status="cancelled">
+      <h2><a href="https://www.ticketmaster.com.au/a-tribute-to-hans-zimmer-and-thirroul-09-06-2026/event/1300638FD4A266C6" target="_blank" rel="noopener">A Tribute to Hans Zimmer and Film Favourites Illuminated</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 9 Jun 2026</div>
+        <div><strong>Time:</strong> 6:00 PM</div>
+        <div><strong>Venue:</strong> Anita&#x27;s Theatre</div>
+        <div><strong>City:</strong> Wollongong</div>
+      </div>
+      <span class="status status-cancelled">cancelled</span>
+    </article>
+    
+
+    <article class="card" data-city="Wollongong" data-venue="Anita&#x27;s Theatre" data-status="cancelled">
+      <h2><a href="https://www.ticketmaster.com.au/a-tribute-to-hans-zimmer-and-thirroul-09-06-2026/event/1300638FDD196A6A" target="_blank" rel="noopener">A Tribute to Hans Zimmer and Film Favourites Illuminated</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 9 Jun 2026</div>
+        <div><strong>Time:</strong> 9:00 PM</div>
+        <div><strong>Venue:</strong> Anita&#x27;s Theatre</div>
+        <div><strong>City:</strong> Wollongong</div>
+      </div>
+      <span class="status status-cancelled">cancelled</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="sold out">
+      <h2><a href="https://www.smithsalternative.com/events/mosaic-woolgathering-96450?d=23%2F06%2F2026+7%3A00%3A00+PM" target="_blank" rel="noopener">Mosaic + Woolgathering</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 23 Jun 2026</div>
+        <div><strong>Time:</strong> 7:00 PM</div>
+        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
+      <h2><a href="https://www.enmoretheatre.com.au/event/colin-hay/" target="_blank" rel="noopener">COLIN HAY</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 25 Jun 2026</div>
+        
+        <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="sold out">
+      <h2><a href="https://www.factorytheatre.com.au/event/go-jo/" target="_blank" rel="noopener">Go-Jo: The Go-Jo Variety Show</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 26 Jun 2026</div>
+        
+        <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="sold out">
+      <h2><a href="https://www.metrotheatre.com.au/event/dj-noiz/" target="_blank" rel="noopener">DJ NOIZ</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 27 Jun 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
+      <h2><a href="https://www.enmoretheatre.com.au/event/ninajirachi/" target="_blank" rel="noopener">NINAJIRACHI</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 3 Jul 2026</div>
+        
+        <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="wait list">
+      <h2><a href="https://www.factorytheatre.com.au/event/eddy-current-suppression-ring/" target="_blank" rel="noopener">EDDY CURRENT SUPPRESSION RING</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 3 Jul 2026</div>
+        
+        <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Gang Gang Cafe" data-status="sold out">
+      <h2><a href="https://events.humanitix.com/cut-worms-usa-with-special-guest-john-andrews-usa/tickets" target="_blank" rel="noopener">Cut Worms (USA) with special guest John Andrews (USA)</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
+        
+        <div><strong>Venue:</strong> Gang Gang Cafe</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
+      <h2><a href="https://www.enmoretheatre.com.au/event/spiderbait-ivy-the-big-apples-30th-anniversary/" target="_blank" rel="noopener">SPIDERBAIT: IVY &amp; THE BIG APPLES 30th ANNIVERSARY</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 31 Jul 2026</div>
+        
+        <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="wait list">
+      <h2><a href="https://www.metrotheatre.com.au/event/geordie-greep/" target="_blank" rel="noopener">GEORDIE GREEP</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Mon 3 Aug 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="cancelled">
+      <h2><a href="https://www.metrotheatre.com.au/event/celebrating-queen/" target="_blank" rel="noopener">CELEBRATING QUEEN - CANCELLED</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 8 Aug 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-cancelled">cancelled</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
+      <h2><a href="https://www.enmoretheatre.com.au/event/slayyyter/" target="_blank" rel="noopener">Slayyyter: WOR$T GIRL IN THE WORLD TOUR</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 9 Aug 2026 - Mon 10 Aug 2026</div>
+        
+        <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
+      <h2><a href="https://www.enmoretheatre.com.au/event/violent-soho/" target="_blank" rel="noopener">VIOLENT SOHO</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 11 Sep 2026 - Sat 12 Sep 2026</div>
+        
+        <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="sold out">
+      <h2><a href="https://www.enmoretheatre.com.au/event/men-i-trust/" target="_blank" rel="noopener">MEN I TRUST</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 20 Nov 2026 - Sat 21 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="sold out">
+      <h2><a href="https://www.factorytheatre.com.au/event/david-nihill/" target="_blank" rel="noopener">DAVID NIHILL</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 22 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="sold out">
+      <h2><a href="https://iccsydney.com.au/events/the-2-johnnies/" target="_blank" rel="noopener">The 2 Johnnies – RESCHEDULED</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 27 February 2027</div>
+        
+        <div><strong>Venue:</strong> ICC Sydney</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-sold-out">sold out</span>
+    </article>
+    </section>
+</main>
+<a class="back-to-top" href="#top">Back to top</a>
+<script>
+const currentFile = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('nav a').forEach(link => {
+  const hrefFile = link.getAttribute('href').split('/').pop();
+  if (hrefFile === currentFile) link.classList.add('active');
+});
+const search = document.querySelector('#search');
+const city = document.querySelector('#city');
+const status = document.querySelector('#status');
+function applyFilters() {
+  document.querySelectorAll('.card').forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const matchesSearch = !search || text.includes(search.value.toLowerCase());
+    const matchesCity = !city || !city.value || card.dataset.city === city.value;
+    const matchesStatus = !status || !status.value || card.dataset.status === status.value;
+    card.style.display = matchesSearch && matchesCity && matchesStatus ? '' : 'none';
+  });
+}
+[search, city, status].forEach(el => el && el.addEventListener('input', applyFilters));
+</script>
+</body>
+</html>
