@@ -19,7 +19,7 @@ nav a.active { background:var(--active); border-color:var(--muted); font-weight:
 main { padding:20px; max-width:1200px; margin:0 auto; }
 a { text-underline-offset:3px; }
 a:hover, a:focus { text-decoration:underline; }
-.summary { color:var(--muted); font-size:13px; }
+.summary { color:var(--muted); font-size:12px; }
 .filters { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 14px; }
 .filters input, .filters select { padding:6px 8px; border:1px solid var(--border); border-radius:8px; min-width:170px; background:var(--card); color:var(--text); font-size:13px; }
 .event-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; }
@@ -32,7 +32,7 @@ a:hover, a:focus { text-decoration:underline; }
 .status-available { background:#14532d; color:white; border-color:#14532d; }
 .card a { color:inherit; }
 .card a:hover, .card a:focus, .agenda-table a:hover, .agenda-table a:focus, td a:hover, td a:focus { color:var(--link-hover); background:var(--link-hover-bg); text-decoration:underline; text-decoration-thickness:2px; outline:2px solid transparent; border-radius:3px; }
-.group-heading { margin:24px 0 8px; font-size:19px; }
+.group-heading { margin: 24px 0 8px; font-size: 19px; position: sticky; top: 120px; z-index: 1; background: var(--bg); padding: 8px 12px; border-bottom: 1px solid var(--border);}
 .empty { padding:16px; border:1px dashed var(--border); border-radius:12px; color:var(--muted); font-size:13px; }
 .table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:14px; }
 .agenda-table { table-layout:fixed; width:100%; }
@@ -56,6 +56,7 @@ tr:last-child td { border-bottom:0; }
   .agenda-table th:nth-child(3), .agenda-table td:nth-child(3) { display:none; }
   .agenda-table th, .agenda-table td { font-size:11px; padding:5px 6px; }
   .agenda-mobile-venue { display:block; }
+  .group-heading { top:188px;}
 }
 .back-to-top { position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:3; color:inherit; text-decoration:none; border:1px solid var(--border); background:var(--card); padding:7px 10px; border-radius:999px; font-size:12px; box-shadow:0 2px 10px rgba(0,0,0,.12); }
 .back-to-top:hover, .back-to-top:focus { background:var(--card); border-color:var(--muted); text-decoration:none; transform:translateX(-50%) translateY(-2px); }
@@ -64,7 +65,7 @@ tr:last-child td { border-bottom:0; }
 <body id="top">
 <header>
   <h1>Events by location</h1>
-  <div class="summary">1167 events. Generated 30 May 2026, 5:04 AM.</div>
+  <div class="summary">1134 events. Generated 31 May 2026, 5:04 AM.</div>
   <nav>
     <a href="summary.html">Summary</a>
     <a href="next-four-weeks-canberra-queanbeyan-t.html">CBR/QBN 4wks T</a>
@@ -154,18 +155,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Canberra — APH - Parliament House</h2>
 <section class="event-grid">
-    <article class="card" data-city="Canberra" data-venue="APH - Parliament House" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/indigenous-stargazing-at-parliament-house" target="_blank" rel="noopener">Indigenous Stargazing at Australian Parliament House</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 28 May 2026</div>
-        <div><strong>Time:</strong> 6:00 PM</div>
-        <div><strong>Venue:</strong> APH - Parliament House</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Canberra" data-venue="APH - Parliament House" data-status="unknown">
       <h2><a href="https://events.humanitix.com/traditional-bush-animal-weaving-workshop" target="_blank" rel="noopener">Traditional Bush Animal Weaving Workshop</a></h2>
       <div class="meta">
@@ -397,21 +386,9 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Canberra — Canberra Theatre Centre</h2>
 <section class="event-grid">
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
-      <h2><a href="https://canberratheatrecentre.com.au/show/lano-and-woodley-in-space-2026/" target="_blank" rel="noopener">Lano &amp; Woodley in Space</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Canberra Theatre Centre</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/the-sapphires-2026/" target="_blank" rel="noopener">The Sapphires</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026 -7 Jun 2026</div>
+        <div><strong>Date:</strong> Sun 31 May 2026 -7 Jun 2026</div>
         
         <div><strong>Venue:</strong> Canberra Theatre Centre</div>
         <div><strong>City:</strong> Canberra</div>
@@ -1238,19 +1215,7 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Canberra — Dissent Cafe and Bar</h2>
 <section class="event-grid">
     <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/rock-n-roll-never-dies" target="_blank" rel="noopener">ROCK n ROLL NEVER DIES!</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 7:30 PM</div>
-        <div><strong>Venue:</strong> Dissent Cafe and Bar</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/ducks-street" target="_blank" rel="noopener">Ducks Street</a></h2>
+      <h2><a href="https://events.humanitix.com/ducks-street" target="_blank" rel="noopener">Ducks Street w/ Ducks in Trees, Nightswim &amp;amp; Boshi</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 4 Jun 2026</div>
         <div><strong>Time:</strong> 6:30 PM</div>
@@ -1274,7 +1239,7 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/corduroy-company-with-stonebird-and-between-bread" target="_blank" rel="noopener">Corduroy Company with Stonebird and Between Bread</a></h2>
+      <h2><a href="https://events.humanitix.com/corduroy-company-with-stonebird-and-between-bread" target="_blank" rel="noopener">Corduroy Company with Stonebird and Between Bread (Farewell Ben &amp;amp; Kate!)</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Sat 6 Jun 2026</div>
         <div><strong>Time:</strong> 7:30 PM</div>
@@ -1370,7 +1335,7 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/signal-decay-dissent-2026" target="_blank" rel="noopener">Signal Decay w/ Melt, Orthotyp-a, Marlene Claudine Radice, ALPHAMALE</a></h2>
+      <h2><a href="https://events.humanitix.com/signal-decay-dissent-2026" target="_blank" rel="noopener">Signal Decay w/ Melt, Orthotyp-a, ALPHAMALE, Warm Breath</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 25 Jun 2026</div>
         <div><strong>Time:</strong> 7:30 PM</div>
@@ -1382,9 +1347,21 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/people-first-show-dissent" target="_blank" rel="noopener">People Skills (FIRST SHOW) w/ ZUKO x Dingusman 2000 @ Dissent</a></h2>
+      <h2><a href="https://events.humanitix.com/people-first-show-dissent" target="_blank" rel="noopener">People Skills (FIRST SHOW) w/ ZUKO x Dingusman 2000 @ Dissent (FREE ENTRY)</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Fri 26 Jun 2026</div>
+        <div><strong>Time:</strong> 7:30 PM</div>
+        <div><strong>Venue:</strong> Dissent Cafe and Bar</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
+      <h2><a href="https://events.humanitix.com/sonic-reducer-dissent-june-2026" target="_blank" rel="noopener">Sonic Reducer w/ Guiness Stone + ULTRARAGE @ Dissent</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 27 Jun 2026</div>
         <div><strong>Time:</strong> 7:30 PM</div>
         <div><strong>Venue:</strong> Dissent Cafe and Bar</div>
         <div><strong>City:</strong> Canberra</div>
@@ -1443,9 +1420,9 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Canberra — Fiction Club</h2>
 <section class="event-grid">
     <article class="card" data-city="Canberra" data-venue="Fiction Club" data-status="available">
-      <h2><a href="https://www.intix.com.au/event/alexkk/information" target="_blank" rel="noopener">for LIVE AT 50 - Alex K</a></h2>
+      <h2><a href="https://www.intix.com.au/event/alexkk/information" target="_blank" rel="noopener">LIVE AT 50 - Alex K</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Unknown</div>
+        <div><strong>Date:</strong> Fri 5 Jun 2026</div>
         
         <div><strong>Venue:</strong> Fiction Club</div>
         <div><strong>City:</strong> Canberra</div>
@@ -1455,9 +1432,9 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Canberra" data-venue="Fiction Club" data-status="available">
-      <h2><a href="https://www.intix.com.au/event/blood/information" target="_blank" rel="noopener">for LIVE AT 50 - Bloody Beetroots</a></h2>
+      <h2><a href="https://www.intix.com.au/event/iceman/information" target="_blank" rel="noopener">SUGA - ICEMAN</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Unknown</div>
+        <div><strong>Date:</strong> Sat 6 Jun 2026</div>
         
         <div><strong>Venue:</strong> Fiction Club</div>
         <div><strong>City:</strong> Canberra</div>
@@ -1467,9 +1444,9 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Canberra" data-venue="Fiction Club" data-status="available">
-      <h2><a href="https://www.intix.com.au/event/luude2/information" target="_blank" rel="noopener">for LIVE AT 50 - Luude</a></h2>
+      <h2><a href="https://www.intix.com.au/event/ellenrose/information" target="_blank" rel="noopener">SUGA - Ellen Rose</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Unknown</div>
+        <div><strong>Date:</strong> Sat 13 Jun 2026</div>
         
         <div><strong>Venue:</strong> Fiction Club</div>
         <div><strong>City:</strong> Canberra</div>
@@ -1479,9 +1456,9 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Canberra" data-venue="Fiction Club" data-status="available">
-      <h2><a href="https://www.intix.com.au/event/ellenrose/information" target="_blank" rel="noopener">for SUGA - Ellen Rose - 13TH JUNE</a></h2>
+      <h2><a href="https://www.intix.com.au/event/luude2/information" target="_blank" rel="noopener">LIVE AT 50 - Luude</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Unknown</div>
+        <div><strong>Date:</strong> Fri 19 Jun 2026</div>
         
         <div><strong>Venue:</strong> Fiction Club</div>
         <div><strong>City:</strong> Canberra</div>
@@ -1491,9 +1468,9 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Canberra" data-venue="Fiction Club" data-status="available">
-      <h2><a href="https://www.intix.com.au/event/iceman/information" target="_blank" rel="noopener">for SUGA - ICEMAN - 06TH JUNE</a></h2>
+      <h2><a href="https://www.intix.com.au/event/blood/information" target="_blank" rel="noopener">LIVE AT 50 - Bloody Beetroots</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Unknown</div>
+        <div><strong>Date:</strong> Fri 26 Jun 2026</div>
         
         <div><strong>Venue:</strong> Fiction Club</div>
         <div><strong>City:</strong> Canberra</div>
@@ -1503,9 +1480,9 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Canberra" data-venue="Fiction Club" data-status="available">
-      <h2><a href="https://www.intix.com.au/event/suga1/information" target="_blank" rel="noopener">for SUGA 1ST BIRTHDAY - May 30th</a></h2>
+      <h2><a href="https://www.intix.com.au/event/suga1/information" target="_blank" rel="noopener">SUGA 1ST BIRTHDAY</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Unknown</div>
+        <div><strong>Date:</strong> Sun 30 May 2027</div>
         
         <div><strong>Venue:</strong> Fiction Club</div>
         <div><strong>City:</strong> Canberra</div>
@@ -1515,18 +1492,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Canberra — Fun Time Pony</h2>
 <section class="event-grid">
-    <article class="card" data-city="Canberra" data-venue="Fun Time Pony" data-status="available">
-      <h2><a href="https://tickets.oztix.com.au/outlet/event/b067f888-33b3-42ab-b018-6dcd50bdcf5d" target="_blank" rel="noopener">This gig is history</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 11 Mar 2021</div>
-        
-        <div><strong>Venue:</strong> Fun Time Pony</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
     <article class="card" data-city="Canberra" data-venue="Fun Time Pony" data-status="available">
       <h2><a href="https://tickets.oztix.com.au/outlet/event/5ed30e64-3f38-4d7a-bf95-25732c1e27ba" target="_blank" rel="noopener">SHADY NASTY w/ FEEL THE PAIN, SECRET WORLD</a></h2>
       <div class="meta">
@@ -1564,18 +1529,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Canberra — GIO Stadium Canberra</h2>
 <section class="event-grid">
-    <article class="card" data-city="Canberra" data-venue="GIO Stadium Canberra" data-status="unknown">
-      <h2><a href="https://giostadiumcanberra.com.au/gio-stadium-event/rugby-2026-rd-16/" target="_blank" rel="noopener">Super Rugby Pacific – ACT Brumbies v Moana Pasifika</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 2:35 PM</div>
-        <div><strong>Venue:</strong> GIO Stadium Canberra</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Canberra" data-venue="GIO Stadium Canberra" data-status="unknown">
       <h2><a href="https://giostadiumcanberra.com.au/gio-stadium-event/nrl-raiders-v-cowboys-rd13/" target="_blank" rel="noopener">NRL 2026 – Raiders v Cowboys</a></h2>
       <div class="meta">
@@ -1665,6 +1618,18 @@ tr:last-child td { border-bottom:0; }
       <div class="meta">
         <div><strong>Date:</strong> Fri 21 Aug 2026</div>
         <div><strong>Time:</strong> 6:00 PM</div>
+        <div><strong>Venue:</strong> GIO Stadium Canberra</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="GIO Stadium Canberra" data-status="unknown">
+      <h2><a href="https://giostadiumcanberra.com.au/gio-stadium-event/nrl-raiders-v-broncos-rd25-2/" target="_blank" rel="noopener">NRLW 2026 – Raiders v Eels</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 6 Sep 2026</div>
+        <div><strong>Time:</strong> 6:15 PM</div>
         <div><strong>Venue:</strong> GIO Stadium Canberra</div>
         <div><strong>City:</strong> Canberra</div>
       </div>
@@ -1964,18 +1929,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Canberra — NFSA Arc Cinema</h2>
 <section class="event-grid">
-    <article class="card" data-city="Canberra" data-venue="NFSA Arc Cinema" data-status="unknown">
-      <h2><a href="https://tickets.nfsa.gov.au/Events/Puffs-of-Smoke/Sat-May-30-2026-19-00" target="_blank" rel="noopener">Puffs of Smoke</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 7:00 PM</div>
-        <div><strong>Venue:</strong> NFSA Arc Cinema</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Canberra" data-venue="NFSA Arc Cinema" data-status="unknown">
       <h2><a href="https://tickets.nfsa.gov.au/Events/High-Ground-Q-A/Sun-May-31-2026-14-00" target="_blank" rel="noopener">High Ground Q A</a></h2>
       <div class="meta">
@@ -3082,21 +3035,9 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Canberra — One22</h2>
 <section class="event-grid">
     <article class="card" data-city="Canberra" data-venue="One22" data-status="available">
-      <h2><a href="https://www.intix.com.au/event/b1/information" target="_blank" rel="noopener">for - Baron Von Trax</a></h2>
+      <h2><a href="https://www.intix.com.au/event/b1/information" target="_blank" rel="noopener">Baron Von Trax</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Unknown</div>
-        
-        <div><strong>Venue:</strong> One22</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="One22" data-status="available">
-      <h2><a href="https://www.intix.com.au/event/shuffwax/information" target="_blank" rel="noopener">for - Shuffa &amp; Waxx Off</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Unknown</div>
+        <div><strong>Date:</strong> Fri 5 Jun 2026</div>
         
         <div><strong>Venue:</strong> One22</div>
         <div><strong>City:</strong> Canberra</div>
@@ -3109,7 +3050,7 @@ tr:last-child td { border-bottom:0; }
     <article class="card" data-city="Canberra" data-venue="Shadows" data-status="available">
       <h2><a href="https://whatslively.com/events/7c9c6e719986be0733ece3c73a33ac6ced5819a4" target="_blank" rel="noopener">BOX ELDER</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Fri 05 Jun 2026</div>
+        <div><strong>Date:</strong> Fri 5 Jun 2026</div>
         
         <div><strong>Venue:</strong> Shadows</div>
         <div><strong>City:</strong> Canberra</div>
@@ -3157,7 +3098,7 @@ tr:last-child td { border-bottom:0; }
     <article class="card" data-city="Canberra" data-venue="Shadows" data-status="available">
       <h2><a href="https://whatslively.com/events/8cc442b410bc449fbcf0e911d3bf4bff849be405" target="_blank" rel="noopener">Blood On My Hands • End It All</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Sat 04 Jul 2026</div>
+        <div><strong>Date:</strong> Sat 4 Jul 2026</div>
         
         <div><strong>Venue:</strong> Shadows</div>
         <div><strong>City:</strong> Canberra</div>
@@ -3167,42 +3108,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Canberra — Smith&#x27;s Alternative</h2>
 <section class="event-grid">
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/ben-van-gelder-reinier-baas-95222?d=30%2F05%2F2026+4%3A00%3A00+PM" target="_blank" rel="noopener">Ben van Gelder &amp; Reinier Baas</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 4:00 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/jef-neve-and-teus-nobel-95225?d=30%2F05%2F2026+7%3A00%3A00+PM" target="_blank" rel="noopener">Jef Neve and Teus Nobel</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 7:00 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/eyrie-improv-improvised-burlesque-96158?d=30%2F05%2F2026+9%3A30%3A00+PM" target="_blank" rel="noopener">Eyrie Improv - Improvised Burlesque</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 9:30 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
       <h2><a href="https://www.smithsalternative.com/events/the-sloane-tapes-96440?d=31%2F05%2F2026+12%3A00%3A00+PM" target="_blank" rel="noopener">The Sloane Tapes Rock Jam</a></h2>
       <div class="meta">
@@ -4797,21 +4702,45 @@ tr:last-child td { border-bottom:0; }
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
-    </section>
-<h2 class="group-heading">Canberra — Street Theatre - Street 1</h2>
-<section class="event-grid">
-    <article class="card" data-city="Canberra" data-venue="Street Theatre - Street 1" data-status="unknown">
-      <h2><a href="https://au.patronbase.com/_StreetTheatre/Performances/Single?prod_id=KW26&amp;perf_id=1" target="_blank" rel="noopener">Kirsty Webeck - Lost For Words</a></h2>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
+      <h2><a href="https://www.smithsalternative.com/events/pop-folk-rock-jam-79790?d=9%2F07%2F2026+4%3A00%3A00+PM" target="_blank" rel="noopener">Pop-Folk-Rock Jam</a></h2>
       <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 6:30 PM</div>
-        <div><strong>Venue:</strong> Street Theatre - Street 1</div>
+        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
+        <div><strong>Time:</strong> 4:00 PM</div>
+        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
         <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
     
 
+    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
+      <h2><a href="https://www.smithsalternative.com/events/smith-s-scribblers-82645?d=10%2F07%2F2026+12%3A30%3A00+PM" target="_blank" rel="noopener">Smith&#x27;s Scribblers Lunchtime Life Drawing</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 10 Jul 2026</div>
+        <div><strong>Time:</strong> 12:30 PM</div>
+        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
+      <h2><a href="https://www.smithsalternative.com/events/jeff-lang-dom-turner-97841?d=10%2F07%2F2026+6%3A30%3A00+PM" target="_blank" rel="noopener">Jeff Lang &amp; Dom Turner</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 10 Jul 2026</div>
+        <div><strong>Time:</strong> 6:30 PM</div>
+        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    </section>
+<h2 class="group-heading">Canberra — Street Theatre - Street 1</h2>
+<section class="event-grid">
     <article class="card" data-city="Canberra" data-venue="Street Theatre - Street 1" data-status="unknown">
       <h2><a href="https://au.patronbase.com/_StreetTheatre/Performances/Single?prod_id=EOTO&amp;perf_id=1" target="_blank" rel="noopener">Ensemble Offspring: The Oracle</a></h2>
       <div class="meta">
@@ -5018,18 +4947,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Canberra — The Baso</h2>
 <section class="event-grid">
-    <article class="card" data-city="Canberra" data-venue="The Baso" data-status="available">
-      <h2><a href="https://thebaso.oztix.com.au/Default.aspx?Event=238249" target="_blank" rel="noopener">90s N 00s MUSIC FESTIVAL - MAY 2026</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> The Baso</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
     <article class="card" data-city="Canberra" data-venue="The Baso" data-status="available">
       <h2><a href="https://thebaso.oztix.com.au/Default.aspx?Event=239808" target="_blank" rel="noopener">Dansonfest 26</a></h2>
       <div class="meta">
@@ -5370,30 +5287,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Queanbeyan — Royal Hotel Queanbeyan</h2>
 <section class="event-grid">
     <article class="card" data-city="Queanbeyan" data-venue="Royal Hotel Queanbeyan" data-status="unknown">
-      <h2><a href="https://www.royalhotelqbn.com.au/events/rhq-sports-brumbies-live-loud/" target="_blank" rel="noopener">RHQ Sports: Brumbies Live &amp; Loud Brumbies Vs Moana Pasifika</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 2:35 PM</div>
-        <div><strong>Venue:</strong> Royal Hotel Queanbeyan</div>
-        <div><strong>City:</strong> Queanbeyan</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Queanbeyan" data-venue="Royal Hotel Queanbeyan" data-status="unknown">
-      <h2><a href="https://www.royalhotelqbn.com.au/events/livemusicsaturday1/" target="_blank" rel="noopener">Live Music - Saturday</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 8:00 PM</div>
-        <div><strong>Venue:</strong> Royal Hotel Queanbeyan</div>
-        <div><strong>City:</strong> Queanbeyan</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Queanbeyan" data-venue="Royal Hotel Queanbeyan" data-status="unknown">
       <h2><a href="https://www.royalhotelqbn.com.au/events/livemusicsunday1/" target="_blank" rel="noopener">Live Music - Sunday</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Sun 31 May 2026</div>
@@ -5550,18 +5443,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Queanbeyan — The Q</h2>
 <section class="event-grid">
-    <article class="card" data-city="Queanbeyan" data-venue="The Q" data-status="unknown">
-      <h2><a href="https://theq.net.au/whats-on/letz-zep/" target="_blank" rel="noopener">Letz Zep (UK) – Led Zeppelin Tribute</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Wed 27 May 2026</div>
-        
-        <div><strong>Venue:</strong> The Q</div>
-        <div><strong>City:</strong> Queanbeyan</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Queanbeyan" data-venue="The Q" data-status="unknown">
       <h2><a href="https://theq.net.au/whats-on/choral-festival/" target="_blank" rel="noopener">Choral Festival</a></h2>
       <div class="meta">
@@ -5972,18 +5853,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Sydney — Crowbar Sydney</h2>
 <section class="event-grid">
     <article class="card" data-city="Sydney" data-venue="Crowbar Sydney" data-status="available">
-      <h2><a href="https://crowbarsyd.oztix.com.au/Default.aspx?Event=228987" target="_blank" rel="noopener">WILLIAM CRIGHTON - COLONIAL DRIFT ALBUM TOUR</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Crowbar Sydney</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Crowbar Sydney" data-status="available">
       <h2><a href="https://crowbarsyd.oztix.com.au/Default.aspx?Event=236887" target="_blank" rel="noopener">28 Days - 30 Year Anniversary Tour</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Fri 5 Jun 2026</div>
@@ -6356,6 +6225,18 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Sydney" data-venue="Crowbar Sydney" data-status="available">
+      <h2><a href="https://crowbarsyd.oztix.com.au/Default.aspx?Event=241072" target="_blank" rel="noopener">NORTHERN HORIZON FEST</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 28 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Crowbar Sydney</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Crowbar Sydney" data-status="available">
       <h2><a href="https://crowbarsyd.oztix.com.au/Default.aspx?Event=238657" target="_blank" rel="noopener">Uncle Acid and The Deadbeats</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 3 Dec 2026</div>
@@ -6380,18 +6261,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Sydney — Enmore Theatre</h2>
 <section class="event-grid">
-    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="unknown">
-      <h2><a href="https://www.enmoretheatre.com.au/event/the-beta-band/" target="_blank" rel="noopener">THE BETA BAND</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Enmore Theatre</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="unknown">
       <h2><a href="https://www.enmoretheatre.com.au/event/enmore-comedy-club-5/" target="_blank" rel="noopener">ENMORE COMEDY CLUB 2026</a></h2>
       <div class="meta">
@@ -7257,30 +7126,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Sydney — Factory Theatre</h2>
 <section class="event-grid">
-    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
-      <h2><a href="https://www.factorytheatre.com.au/event/the-buzz-lovers-nirvana-tribute-spain/" target="_blank" rel="noopener">THE BUZZ LOVERS (NIRVANA TRIBUTE) (SPAIN) - UPGRADED TO METRO THEATRE</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Factory Theatre</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="cancelled">
-      <h2><a href="https://www.factorytheatre.com.au/event/the-midwives-2/" target="_blank" rel="noopener">THE MIDWIVES - CANCELLED</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Factory Theatre</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-cancelled">cancelled</span>
-    </article>
-    
-
     <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
       <h2><a href="https://www.factorytheatre.com.au/event/stiff-gins/" target="_blank" rel="noopener">STIFF GINS + special guest KERRYN FIELDS</a></h2>
       <div class="meta">
@@ -8207,54 +8052,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Sydney — ICC Sydney</h2>
 <section class="event-grid">
     <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
-      <h2><a href="https://iccsydney.com.au/events/franchising-expo/" target="_blank" rel="noopener">Franchising Expo</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 - 31 May 2026</div>
-        
-        <div><strong>Venue:</strong> ICC Sydney</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
-      <h2><a href="https://iccsydney.com.au/events/la-la-land-in-concert/" target="_blank" rel="noopener">La La Land in Concert</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May - 01 June 2026</div>
-        
-        <div><strong>Venue:</strong> ICC Sydney</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
-      <h2><a href="https://tiktokentcent.com/event/nancy-ajram/" target="_blank" rel="noopener">Nancy Ajram</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> ICC Sydney</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
-      <h2><a href="https://iccsydney.com.au/events/start-your-own-business-expo/" target="_blank" rel="noopener">Start Your Own Business Expo</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 - 31 May 2026</div>
-        
-        <div><strong>Venue:</strong> ICC Sydney</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
       <h2><a href="https://iccsydney.com.au/events/edutech-au/" target="_blank" rel="noopener">EDUtech AU</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Wed 03 - 04 June 2026</div>
@@ -9012,30 +8809,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Sydney — Liberty Hall</h2>
 <section class="event-grid">
     <article class="card" data-city="Sydney" data-venue="Liberty Hall" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/p-bayartsengel-deja-vu/194210" target="_blank" rel="noopener">P. Bayartsengel - DEJA VU</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 6:30 PM</div>
-        <div><strong>Venue:</strong> Liberty Hall</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Liberty Hall" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/p-bayartsengel-deja-vu-afterparty/195065" target="_blank" rel="noopener">P. Bayartsengel - DEJA VU AFTERPARTY</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 11:00 PM</div>
-        <div><strong>Venue:</strong> Liberty Hall</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Liberty Hall" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/escape-the-fate-australian-tour-2026/192805" target="_blank" rel="noopener">Escape The Fate Australian Tour 2026</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Fri 5 Jun 2026</div>
@@ -9685,30 +9458,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Sydney — Metro Theatre</h2>
 <section class="event-grid">
-    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="unknown">
-      <h2><a href="https://www.metrotheatre.com.au/event/the-buzz-lovers-nirvana-tribute-spain-2/" target="_blank" rel="noopener">THE BUZZ LOVERS (NIRVANA TRIBUTE) (SPAIN)</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Metro Theatre</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="wait list">
-      <h2><a href="https://www.metrotheatre.com.au/event/ukulele-death-squad/" target="_blank" rel="noopener">UKULELE DEATH SQUAD</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Metro Theatre</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-wait-list">wait list</span>
-    </article>
-    
-
     <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="unknown">
       <h2><a href="https://www.metrotheatre.com.au/event/the-buzz-lovers-nirvana-tribute-spain-3/" target="_blank" rel="noopener">THE BUZZ LOVERS (NIRVANA TRIBUTE) (SPAIN) - ALL AGES</a></h2>
       <div class="meta">
@@ -10552,30 +10301,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Sydney — Oxford Art Factory - Main Room</h2>
 <section class="event-grid">
     <article class="card" data-city="Sydney" data-venue="Oxford Art Factory - Main Room" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/2charm/192261" target="_blank" rel="noopener">2charm</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 7:00 PM</div>
-        <div><strong>Venue:</strong> Oxford Art Factory - Main Room</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Oxford Art Factory - Main Room" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/bandida-oxford-art-factory-vivid-sydney/196034" target="_blank" rel="noopener">BANDIDA Oxford Art Factory VIVID SYDNEY</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 11:00 PM</div>
-        <div><strong>Venue:</strong> Oxford Art Factory - Main Room</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Oxford Art Factory - Main Room" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/adrian-sherwood-uk-‘live-dub-sessions’-tour/192933" target="_blank" rel="noopener">Adrian Sherwood [UK] ‘Live Dub Sessions’ Tour</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Tue 2 Jun 2026</div>
@@ -11045,18 +10770,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Sydney — Qudos Bank Arena</h2>
 <section class="event-grid">
     <article class="card" data-city="Sydney" data-venue="Qudos Bank Arena" data-status="unknown">
-      <h2><a href="https://qudosbankarena.com.au/event/i-dle" target="_blank" rel="noopener">i-dle</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Qudos Bank Arena</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Qudos Bank Arena" data-status="unknown">
       <h2><a href="https://qudosbankarena.com.au/event/anirudh" target="_blank" rel="noopener">Anirudh</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Sat 6 June 2026</div>
@@ -11442,18 +11155,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Sydney — Sydney Coliseum Theatre</h2>
 <section class="event-grid">
     <article class="card" data-city="Sydney" data-venue="Sydney Coliseum Theatre" data-status="unknown">
-      <h2><a href="https://premier.ticketek.com.au/shows/Show.aspx?sh=ROYALFSS26" target="_blank" rel="noopener">The Royal Family – Defend the Throne</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Sydney Coliseum Theatre</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Sydney Coliseum Theatre" data-status="unknown">
       <h2><a href="https://premier.ticketek.com.au/shows/show.aspx?sh=LTWUMB26" target="_blank" rel="noopener">Light The Way Workshops</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 4 Jun 2026</div>
@@ -11694,54 +11395,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Sydney — Sydney Opera House</h2>
 <section class="event-grid">
-    <article class="card" data-city="Sydney" data-venue="Sydney Opera House" data-status="unknown">
-      <h2><a href="https://www.sydneyoperahouse.com/vivid-live/mitski" target="_blank" rel="noopener">Mitski</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Fri 29 May 2026 –1 Jun 2026</div>
-        
-        <div><strong>Venue:</strong> Sydney Opera House</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Sydney Opera House" data-status="unknown">
-      <h2><a href="https://www.sydneyoperahouse.com/vivid-live/studio-party-mad-racket-26" target="_blank" rel="noopener">Kai Alcé (US), Lovie (US), Simon Caldwell, Jimmi James &amp; Ken Cloud</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Sydney Opera House</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Sydney Opera House" data-status="unknown">
-      <h2><a href="https://www.sydneyoperahouse.com/vivid-live/trst" target="_blank" rel="noopener">TR/ST</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Sydney Opera House</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Sydney Opera House" data-status="unknown">
-      <h2><a href="https://www.sydneyoperahouse.com/vivid-live/zipporah-mi-kaisha" target="_blank" rel="noopener">ZIPPORAH &amp; Mi-kaisha</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        
-        <div><strong>Venue:</strong> Sydney Opera House</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Sydney" data-venue="Sydney Opera House" data-status="unknown">
       <h2><a href="https://www.sydneyoperahouse.com/vivid-live/cate-le-bon-cass-mccombs" target="_blank" rel="noopener">Cate Le Bon &amp; Cass McCombs</a></h2>
       <div class="meta">
@@ -12116,18 +11769,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Sydney — UNSW Roundhouse</h2>
 <section class="event-grid">
     <article class="card" data-city="Sydney" data-venue="UNSW Roundhouse" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/vidya-vox-the-sundari/193375" target="_blank" rel="noopener">Vidya Vox - The Sundari</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 6:30 PM</div>
-        <div><strong>Venue:</strong> UNSW Roundhouse</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="UNSW Roundhouse" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/t2-session-party-the-greatest-show-on-campus-18/195051" target="_blank" rel="noopener">T2 Session Party | The Greatest Show on Campus| 18+</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 4 Jun 2026</div>
@@ -12368,18 +12009,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Wollongong — Anita&#x27;s Theatre</h2>
 <section class="event-grid">
-    <article class="card" data-city="Wollongong" data-venue="Anita&#x27;s Theatre" data-status="unknown">
-      <h2><a href="https://www.ticketmaster.com.au/letz-zep-uk-led-zeppelin-tribute-thirroul-30-05-2026/event/130063646B1618F3" target="_blank" rel="noopener">Letz Zep (UK) (Led Zeppelin Tribute)</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 8:30 PM</div>
-        <div><strong>Venue:</strong> Anita&#x27;s Theatre</div>
-        <div><strong>City:</strong> Wollongong</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Wollongong" data-venue="Anita&#x27;s Theatre" data-status="cancelled">
       <h2><a href="https://www.ticketmaster.com.au/a-tribute-to-hans-zimmer-and-thirroul-09-06-2026/event/1300638FD4A266C6" target="_blank" rel="noopener">A Tribute to Hans Zimmer and Film Favourites Illuminated</a></h2>
       <div class="meta">
@@ -13018,18 +12647,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Wollongong — La La La&#x27;s</h2>
 <section class="event-grid">
     <article class="card" data-city="Wollongong" data-venue="La La La&#x27;s" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/the-sako-dimension-—-funkilo-live-premiere-w-special-guests-somersault-shal/194188" target="_blank" rel="noopener">The Sako Dimension — Funkilo (Live Premiere) w/ Special Guests Somersault // Shalani &amp; Band // Mahuni</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 7:00 PM</div>
-        <div><strong>Venue:</strong> La La La&#x27;s</div>
-        <div><strong>City:</strong> Wollongong</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Wollongong" data-venue="La La La&#x27;s" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/trivia-tuesdays-la-la-las-wollongong/195341" target="_blank" rel="noopener">Trivia Tuesdays // La La La&#x27;s Wollongong</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Tue 2 Jun 2026</div>
@@ -13342,6 +12959,18 @@ tr:last-child td { border-bottom:0; }
     
 
     <article class="card" data-city="Wollongong" data-venue="La La La&#x27;s" data-status="available">
+      <h2><a href="https://www.moshtix.com.au/v2/event/sonic-reducer-living-room-tour-w-bennetts-grove-the-admired/196089" target="_blank" rel="noopener">Sonic Reducer &#x27;Living Room&#x27; Tour w/ Bennetts Grove// The Admired</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 2 Jul 2026</div>
+        <div><strong>Time:</strong> 7:30 PM</div>
+        <div><strong>Venue:</strong> La La La&#x27;s</div>
+        <div><strong>City:</strong> Wollongong</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Wollongong" data-venue="La La La&#x27;s" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/chuparosa-this-is-life-w-dirty-merchants-lani-faith/194889" target="_blank" rel="noopener">Chuparosa &quot;This is Life&quot; w/ Dirty Merchants // Lani Faith</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Fri 3 Jul 2026</div>
@@ -13499,18 +13128,6 @@ tr:last-child td { border-bottom:0; }
 <h2 class="group-heading">Wollongong — University of Wollongong</h2>
 <section class="event-grid">
     <article class="card" data-city="Wollongong" data-venue="University of Wollongong" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/alright-hey-bring-back-glamour/193249" target="_blank" rel="noopener">Alright Hey - Bring Back Glamour</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 7:30 PM</div>
-        <div><strong>Venue:</strong> University of Wollongong</div>
-        <div><strong>City:</strong> Wollongong</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Wollongong" data-venue="University of Wollongong" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/meg-mac-w-rupert-bullard/192842" target="_blank" rel="noopener">Meg Mac w/ Rupert Bullard</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Fri 5 Jun 2026</div>
@@ -13619,18 +13236,6 @@ tr:last-child td { border-bottom:0; }
     </section>
 <h2 class="group-heading">Wollongong — WIN Entertainment Centre</h2>
 <section class="event-grid">
-    <article class="card" data-city="Wollongong" data-venue="WIN Entertainment Centre" data-status="unknown">
-      <h2><a href="https://www.wsec.com.au/events/rodeo_4_life_2026" target="_blank" rel="noopener">Rodeo 4 Life</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 30 May 2026</div>
-        <div><strong>Time:</strong> 6:00 PM</div>
-        <div><strong>Venue:</strong> WIN Entertainment Centre</div>
-        <div><strong>City:</strong> Wollongong</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Wollongong" data-venue="WIN Entertainment Centre" data-status="unknown">
       <h2><a href="https://www.wsec.com.au/events/stars_of_wollongong_2026" target="_blank" rel="noopener">Stars of Wollongong</a></h2>
       <div class="meta">
