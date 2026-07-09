@@ -10,7 +10,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
-header { padding:20px 24px; background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:2; }
+header { padding:20px 24px; background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:2000; }
 h1 { margin:0 0 8px; font-size:24px; }
 nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
 nav a { color:inherit; text-decoration:none; border:1px solid var(--border); padding:5px 8px; border-radius:999px; background:var(--bg); font-size:10px; line-height:1.2; transition:background .15s ease, border-color .15s ease, transform .15s ease; }
@@ -34,7 +34,7 @@ a:hover, a:focus { text-decoration:underline; }
 .card a:hover, .card a:focus, .agenda-table a:hover, .agenda-table a:focus, td a:hover, td a:focus { color:var(--link-hover); background:var(--link-hover-bg); text-decoration:underline; text-decoration-thickness:2px; outline:2px solid transparent; border-radius:3px; }
 .group-heading { margin: 24px 0 8px; font-size: 19px; position: sticky; top: 120px; z-index: 1; background: var(--bg); padding: 8px 12px; border-bottom: 1px solid var(--border);}
 .empty { padding:16px; border:1px dashed var(--border); border-radius:12px; color:var(--muted); font-size:13px; }
-.table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:14px; }
+.table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:14px; margin-bottom: 2rem;}
 .agenda-table { table-layout:fixed; width:100%; }
 .agenda-table col.col-link { width:52%; }
 .agenda-table col.col-date { width:24%; }
@@ -67,7 +67,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
 <body id="top">
 <header>
   <h1>All upcoming</h1>
-  <div class="summary">1132 events. Generated 9 Jul 2026, 5:07 AM.</div>
+  <div class="summary">1231 events. Generated 10 Jul 2026, 5:26 AM.</div>
   <nav>
     <a href="summary.html">Summary</a>
     <a href="next-four-weeks-canberra-queanbeyan-t.html">CBR/QBN 4wks T</a>
@@ -77,6 +77,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     <a href="index.html">All upcoming</a>
     <a href="sold-out.html">Sold out / wait list</a>
     <a href="by-location.html">By location</a>
+    <a href="maps.html">Maps</a>
     <a href="events.json">Raw JSON</a>
   </nav>
 </header>
@@ -88,198 +89,6 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
       <select id="status"><option value="">All statuses</option><option value="available">available</option><option value="cancelled">cancelled</option><option value="sold out">sold out</option><option value="unknown">unknown</option><option value="wait list">wait list</option></select>
     </div>
     <section class="event-grid">
-    <article class="card" data-city="Canberra" data-venue="APH - Australian Parliament House" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/democracy-kids-in-the-house" target="_blank" rel="noopener">Democracy! Kids in the House</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 10:30 AM</div>
-        <div><strong>Venue:</strong> APH - Australian Parliament House</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/smith-s-scribblers-73943?d=9%2F07%2F2026+12%3A30%3A00+PM" target="_blank" rel="noopener">Smith&#x27;s Scribblers Lunchtime Life Drawing</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 12:30 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Wollongong" data-venue="La La La&#x27;s" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/joker-jackpot-la-la-las-wollongong/196527" target="_blank" rel="noopener">Joker Jackpot // La La La&#x27;s Wollongong</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 4:00 PM</div>
-        <div><strong>Venue:</strong> La La La&#x27;s</div>
-        <div><strong>City:</strong> Wollongong</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/pop-folk-rock-jam-79790?d=9%2F07%2F2026+4%3A00%3A00+PM" target="_blank" rel="noopener">Pop-Folk-Rock Jam</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 4:00 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Queanbeyan" data-venue="Royal Hotel Queanbeyan" data-status="unknown">
-      <h2><a href="https://www.royalhotelqbn.com.au/events/livemusicthursday1/" target="_blank" rel="noopener">Live Music - Thursday</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 6:00 PM</div>
-        <div><strong>Venue:</strong> Royal Hotel Queanbeyan</div>
-        <div><strong>City:</strong> Queanbeyan</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/flesh-july-sess-95166?d=9%2F07%2F2026+6%3A30%3A00+PM" target="_blank" rel="noopener">FLESH July Sess Queer Life Drawing</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 6:30 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Wollongong" data-venue="La La La&#x27;s" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/the-great-southern-band-presents-weezer-tribute-w-sublime-tribute-90s-tribut/195543" target="_blank" rel="noopener">The Great Southern Band presents Weezer Tribute w/ Sublime Tribute // 90&#x27;s Tribute</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 7:00 PM</div>
-        <div><strong>Venue:</strong> La La La&#x27;s</div>
-        <div><strong>City:</strong> Wollongong</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Oxford Art Factory - Main Room" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/ben-kweller/193421" target="_blank" rel="noopener">Ben Kweller</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 7:00 PM</div>
-        <div><strong>Venue:</strong> Oxford Art Factory - Main Room</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/goese-winona-scowls-dissent" target="_blank" rel="noopener">Goese, Winona, Scowls @ Dissent</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 7:30 PM</div>
-        <div><strong>Venue:</strong> Dissent Cafe and Bar</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Liberty Hall" data-status="available">
-      <h2><a href="https://www.moshtix.com.au/v2/event/drake-milligan-tumbleweed-tour-with-special-guest-mack-geiger/189868" target="_blank" rel="noopener">DRAKE MILLIGAN - Tumbleweed Tour with Special Guest Mack Geiger</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        <div><strong>Time:</strong> 7:30 PM</div>
-        <div><strong>Venue:</strong> Liberty Hall</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-available">available</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
-      <h2><a href="https://canberratheatrecentre.com.au/show/gia-ophelia-2026/" target="_blank" rel="noopener">Gia Ophelia</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 –11 Jul 2026</div>
-        
-        <div><strong>Venue:</strong> Canberra Theatre Centre</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
-      <h2><a href="https://canberratheatrecentre.com.au/show/middle-raged-2026/" target="_blank" rel="noopener">Middle Raged</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 –11 Jul 2026</div>
-        
-        <div><strong>Venue:</strong> Canberra Theatre Centre</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
-      <h2><a href="https://canberratheatrecentre.com.au/show/the-ultimate-vegas-show-2026/" target="_blank" rel="noopener">The Ultimate Vegas Show</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        
-        <div><strong>Venue:</strong> Canberra Theatre Centre</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Gang Gang Cafe" data-status="sold out">
-      <h2><a href="https://events.humanitix.com/cut-worms-usa-with-special-guest-john-andrews-usa/tickets" target="_blank" rel="noopener">Cut Worms (USA) with special guest John Andrews (USA)</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        
-        <div><strong>Venue:</strong> Gang Gang Cafe</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-sold-out">sold out</span>
-    </article>
-    
-
-    <article class="card" data-city="Sydney" data-venue="Sydney Opera House" data-status="unknown">
-      <h2><a href="https://www.sydneyoperahouse.com/contemporary-music/stelarc-antipodean-apparatus" target="_blank" rel="noopener">Stelarc: Antipodean Apparatus</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        
-        <div><strong>Venue:</strong> Sydney Opera House</div>
-        <div><strong>City:</strong> Sydney</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Queanbeyan" data-venue="The Q" data-status="unknown">
-      <h2><a href="https://theq.net.au/whats-on/abracadabra/" target="_blank" rel="noopener">Abracadabra</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Thu 9 Jul 2026</div>
-        
-        <div><strong>Venue:</strong> The Q</div>
-        <div><strong>City:</strong> Queanbeyan</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
       <h2><a href="https://www.smithsalternative.com/events/smith-s-scribblers-82645?d=10%2F07%2F2026+12%3A30%3A00+PM" target="_blank" rel="noopener">Smith&#x27;s Scribblers Lunchtime Life Drawing</a></h2>
       <div class="meta">
@@ -287,6 +96,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 12:30 PM</div>
         <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
         <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Sydney Cricket Ground" data-status="unknown">
+      <h2><a href="https://www.sydneycricketground.com.au/events/n2026_aflw_pre_season__sydney_swans_v_gold_coast_s" target="_blank" rel="noopener">2026 AFLW Pre-season: Sydney Swans v Gold Coast Suns at the</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 10 Jul 2026</div>
+        <div><strong>Time:</strong> 12:55 PM</div>
+        <div><strong>Venue:</strong> Sydney Cricket Ground</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -317,7 +138,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     
 
     <article class="card" data-city="Wollongong" data-venue="Anita&#x27;s Theatre" data-status="unknown">
-      <h2><a href="https://www.ticketmaster.com.au/abbie-chatfield-loves-men-thirroul-10-07-2026/event/13006497A7004EA1" target="_blank" rel="noopener">Tomorrow Friday, 10 July 2026 at 7:00 pm Fri 10 July 7:00 pm Abbie Chatfield Loves Men</a></h2>
+      <h2><a href="https://www.ticketmaster.com.au/abbie-chatfield-loves-men-thirroul-10-07-2026/event/13006497A7004EA1" target="_blank" rel="noopener">Today Friday, 10 July 2026 at 7:00 pm Fri 10 July 7:00 pm Abbie Chatfield Loves Men</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Fri 10 Jul 2026</div>
         <div><strong>Time:</strong> 7:00 PM</div>
@@ -425,9 +246,33 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     
 
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
+      <h2><a href="https://canberratheatrecentre.com.au/show/gia-ophelia-2026/" target="_blank" rel="noopener">Gia Ophelia</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 10 –11 Jul 2026</div>
+        
+        <div><strong>Venue:</strong> Canberra Theatre Centre</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/k-pop-icons-2026/" target="_blank" rel="noopener">K-POP Icons</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Fri 10 Jul 2026</div>
+        
+        <div><strong>Venue:</strong> Canberra Theatre Centre</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
+      <h2><a href="https://canberratheatrecentre.com.au/show/middle-raged-2026/" target="_blank" rel="noopener">Middle Raged</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 10 –11 Jul 2026</div>
         
         <div><strong>Venue:</strong> Canberra Theatre Centre</div>
         <div><strong>City:</strong> Canberra</div>
@@ -517,6 +362,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrl_round_19__bulldogs_vs_raiders" target="_blank" rel="noopener">NRL Round 19 – Bulldogs vs Raiders</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 11 Jul 2026</div>
+        <div><strong>Time:</strong> 2:45 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrlw_round_2_bulldogs_vs_titans" target="_blank" rel="noopener">NRLW Round 2 – Bulldogs vs Titans</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 11 Jul 2026</div>
+        <div><strong>Time:</strong> 2:45 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -685,6 +554,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Crowbar Sydney" data-status="available">
+      <h2><a href="https://crowbarsyd.oztix.com.au/Default.aspx?Event=244047" target="_blank" rel="noopener">Blink-182 and Acoustic Pop Punk cover show</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 11 Jul 2026</div>
+        
+        <div><strong>Venue:</strong> Crowbar Sydney</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
     </article>
     
 
@@ -868,18 +749,6 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
-    <article class="card" data-city="Queanbeyan" data-venue="The Q" data-status="unknown">
-      <h2><a href="https://theq.net.au/whats-on/whitefella-yella-tree/" target="_blank" rel="noopener">Whitefella Yella Tree</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Sat 11 Jul 2026</div>
-        
-        <div><strong>Venue:</strong> The Q</div>
-        <div><strong>City:</strong> Queanbeyan</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Canberra" data-venue="Vent" data-status="available">
       <h2><a href="https://www.intix.com.au/event/sos5/information" target="_blank" rel="noopener">Decibel Creative x Canberra Glassworks - Official After Party</a></h2>
       <div class="meta">
@@ -925,6 +794,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="cancelled">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrl_round_19__rabbitohs_vs_knights" target="_blank" rel="noopener">NRL Round 19 – Rabbitohs vs Knights at Accor Stadium</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 12 Jul 2026</div>
+        <div><strong>Time:</strong> 12:30 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-cancelled">cancelled</span>
     </article>
     
 
@@ -1360,6 +1241,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/disney-on-ice-2" target="_blank" rel="noopener">Disney On Ice</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Wed 15-19 July 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Belco Arts" data-status="unknown">
       <h2><a href="https://www.belcoarts.com.au/bull/" target="_blank" rel="noopener">BULL</a></h2>
       <div class="meta">
@@ -1444,6 +1337,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrl_round_20__panthers_vs_broncos" target="_blank" rel="noopener">NRL Round 20 – Panthers vs Broncos</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 16 Jul 2026</div>
+        <div><strong>Time:</strong> 5:15 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="UNSW Roundhouse" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/battle-of-the-bands-finale/193959" target="_blank" rel="noopener">Battle of the Bands | Finale</a></h2>
       <div class="meta">
@@ -1494,6 +1399,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
 
     <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
       <h2><a href="https://www.smithsalternative.com/events/byways-99753?d=16%2F07%2F2026+7%3A30%3A00+PM" target="_blank" rel="noopener">BYWAYS July Edition,</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 16 Jul 2026</div>
+        <div><strong>Time:</strong> 7:30 PM</div>
+        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
+      <h2><a href="https://www.smithsalternative.com/events/chuckle-force-comedy-15-99936?d=16%2F07%2F2026+7%3A30%3A00+PM" target="_blank" rel="noopener">Chuckle Force Comedy #15</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 16 Jul 2026</div>
         <div><strong>Time:</strong> 7:30 PM</div>
@@ -1576,6 +1493,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Sydney Cricket Ground" data-status="unknown">
+      <h2><a href="https://www.sydneycricketground.com.au/events/n2026_afl_round_19__sydney_swans_v_adelaide_crows_" target="_blank" rel="noopener">2026 AFL Round 19: Sydney Swans v Adelaide Crows* at the Syd</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 17 Jul 2026</div>
+        <div><strong>Time:</strong> 5:30 PM</div>
+        <div><strong>Venue:</strong> Sydney Cricket Ground</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
       <h2><a href="https://www.smithsalternative.com/events/thor-phillips-98264?d=17%2F07%2F2026+6%3A30%3A00+PM" target="_blank" rel="noopener">Thor Phillips</a></h2>
       <div class="meta">
@@ -1636,18 +1565,6 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
-    <article class="card" data-city="Canberra" data-venue="Live at the Polo" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/la-vie-en-rose" target="_blank" rel="noopener">La Vie en Rose</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Fri 17 Jul 2026</div>
-        <div><strong>Time:</strong> 7:30 PM</div>
-        <div><strong>Venue:</strong> Live at the Polo</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Sydney" data-venue="Oxford Art Factory - Gallery Bar" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/crocodylus-album-tour/196150" target="_blank" rel="noopener">Crocodylus Album Tour</a></h2>
       <div class="meta">
@@ -1678,6 +1595,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Date:</strong> Fri 17 Jul 2026</div>
         <div><strong>Time:</strong> 11:00 PM</div>
         <div><strong>Venue:</strong> Oxford Art Factory - Main Room</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Oxford Art Factory - Gallery Bar" data-status="available">
+      <h2><a href="https://www.moshtix.com.au/v2/event/gracie-abrams-official-album-release-party-sydney/197810" target="_blank" rel="noopener">Gracie Abrams Official Album Release Party - Sydney</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 17 Jul 2026</div>
+        <div><strong>Time:</strong> 11:30 PM</div>
+        <div><strong>Venue:</strong> Oxford Art Factory - Gallery Bar</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-available">available</span>
@@ -1840,6 +1769,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrlw_round_3__bulldogs_vs_sharks" target="_blank" rel="noopener">2026 NRLW Round 3 - Bulldogs vs Sharks</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 18 Jul 2026</div>
+        <div><strong>Time:</strong> 4:45 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrl_round_20__bulldogs_vs_wests_tigers" target="_blank" rel="noopener">NRL Round 20 – Bulldogs vs Wests Tigers</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 18 Jul 2026</div>
+        <div><strong>Time:</strong> 4:45 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
       <h2><a href="https://www.smithsalternative.com/events/volant-97392?d=18%2F07%2F2026+6%3A00%3A00+PM" target="_blank" rel="noopener">Volant</a></h2>
       <div class="meta">
@@ -1996,7 +1949,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
-    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="unknown">
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
       <h2><a href="https://www.enmoretheatre.com.au/event/peter-hook-the-light-2/" target="_blank" rel="noopener">PETER HOOK &amp; THE LIGHT</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Sat 18 Jul 2026</div>
@@ -2004,7 +1957,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Venue:</strong> Enmore Theatre</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
-      <span class="status status-unknown">unknown</span>
+      <span class="status status-wait-list">wait list</span>
     </article>
     
 
@@ -2093,7 +2046,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     
 
     <article class="card" data-city="Canberra" data-venue="Vent" data-status="available">
-      <h2><a href="https://www.intix.com.au/event/burjoe/information" target="_blank" rel="noopener">Burjoe</a></h2>
+      <h2><a href="https://www.intix.com.au/event/burjoe/information" target="_blank" rel="noopener">18/07/26</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Sat 18 Jul 2026</div>
         
@@ -2380,6 +2333,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
+      <h2><a href="https://www.smithsalternative.com/events/the-king-hits-99943?d=22%2F07%2F2026+7%3A00%3A00+PM" target="_blank" rel="noopener">The King Hits</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Wed 22 Jul 2026</div>
+        <div><strong>Time:</strong> 7:00 PM</div>
+        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Crowbar Sydney" data-status="available">
       <h2><a href="https://crowbarsyd.oztix.com.au/Default.aspx?Event=243343" target="_blank" rel="noopener">Ozzy Osbourne Day - Honor the Prince of Darkness</a></h2>
       <div class="meta">
@@ -2452,6 +2417,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrl_round_21__eels_vs_panthers" target="_blank" rel="noopener">The Battle of the West – Eels vs Panthers</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 23 Jul 2026</div>
+        <div><strong>Time:</strong> 6:30 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Wollongong" data-venue="La La La&#x27;s" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/phil-jamieson-pj-air-tour-w-ricky-albeck/193625" target="_blank" rel="noopener">Phil Jamieson - PJ AIR Tour w/ Ricky Albeck</a></h2>
       <div class="meta">
@@ -2488,24 +2465,24 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
-    <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
-      <h2><a href="https://events.humanitix.com/tom-woodward-acoustic-session" target="_blank" rel="noopener">Tom. Woodward Acoustic Session</a></h2>
+    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
+      <h2><a href="https://www.smithsalternative.com/events/smith-s-miscellaneous-99950?d=23%2F07%2F2026+7%3A00%3A00+PM" target="_blank" rel="noopener">Smith&#x27;s Miscellaneous</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 23 Jul 2026</div>
-        <div><strong>Time:</strong> 7:30 PM</div>
-        <div><strong>Venue:</strong> Dissent Cafe and Bar</div>
+        <div><strong>Time:</strong> 7:00 PM</div>
+        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
         <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
     
 
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/dual-trio-night-99643?d=23%2F07%2F2026+7%3A30%3A00+PM" target="_blank" rel="noopener">Dual Trio Night</a></h2>
+    <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
+      <h2><a href="https://events.humanitix.com/tom-woodward-acoustic-session" target="_blank" rel="noopener">Tom. Woodward Acoustic Session</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 23 Jul 2026</div>
         <div><strong>Time:</strong> 7:30 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
+        <div><strong>Venue:</strong> Dissent Cafe and Bar</div>
         <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-unknown">unknown</span>
@@ -2560,13 +2537,13 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/rupert-boyd-99242?d=24%2F07%2F2026+6%3A30%3A00+PM" target="_blank" rel="noopener">Rupert Boyd Classical Guitarist</a></h2>
+    <article class="card" data-city="Sydney" data-venue="Sydney Cricket Ground" data-status="unknown">
+      <h2><a href="https://www.sydneycricketground.com.au/events/n2026_aflw_pre_season__sydney_swans_v_hawthorn_hawks" target="_blank" rel="noopener">2026 AFLW Pre-season: Sydney Swans v Hawthorn Hawks at the S</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Fri 24 Jul 2026</div>
-        <div><strong>Time:</strong> 6:30 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
+        <div><strong>Time:</strong> 1:55 PM</div>
+        <div><strong>Venue:</strong> Sydney Cricket Ground</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -2627,6 +2604,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 7:30 PM</div>
         <div><strong>Venue:</strong> Dissent Cafe and Bar</div>
         <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrl_round_21__rabbitohs_vs_storm" target="_blank" rel="noopener">NRL Round 21 – Rabbitohs vs Storm at Accor Stadium</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 24 Jul 2026</div>
+        <div><strong>Time:</strong> 8:00 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -2804,9 +2793,21 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
       <h2><a href="https://giostadiumcanberra.com.au/gio-stadium-event/nrl-raiders-v-tigers-rd21/" target="_blank" rel="noopener">NRL 2026 – Raiders v Tigers | NRLW 2026 – Raiders v Sharks</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Sat 25 Jul 2026</div>
-        <div><strong>Time:</strong> 12:45 PM</div>
+        <div><strong>Time:</strong> 12:40 PM</div>
         <div><strong>Venue:</strong> GIO Stadium Canberra</div>
         <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrlw_round_4__bulldogs_vs_dragons" target="_blank" rel="noopener">NRLW Round 4 – Bulldogs vs Dragons</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 25 Jul 2026</div>
+        <div><strong>Time:</strong> 3:15 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -2833,6 +2834,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrl_round_21__bulldogs_vs_warriors" target="_blank" rel="noopener">NRL Round 21 – Bulldogs vs Warriors</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 25 Jul 2026</div>
+        <div><strong>Time:</strong> 5:30 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -2977,6 +2990,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Fiction Club" data-status="available">
+      <h2><a href="https://www.intix.com.au/event/orosa3/information" target="_blank" rel="noopener">SUGA ft Orosa (BNE)</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 25 Jul 2026</div>
+        
+        <div><strong>Venue:</strong> Fiction Club</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-available">available</span>
     </article>
     
 
@@ -3196,6 +3221,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/spence-jr-vs-tszyu" target="_blank" rel="noopener">SPENCE JR VS TSZYU</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 26 July 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="available">
       <h2><a href="https://www.factorytheatre.com.au/event/life-ends-here-i-zoi-etho-telioni/" target="_blank" rel="noopener">Life Ends Here – I ZOI ETHO TELIONI</a></h2>
       <div class="meta">
@@ -3253,6 +3290,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/ssc__chelsea_fc_v_western_sydney_wanderers" target="_blank" rel="noopener">SSC: Chelsea F.C. v Western Sydney Wanderers</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 28 Jul 2026</div>
+        <div><strong>Time:</strong> 6:15 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
     </article>
     
 
@@ -3736,6 +3785,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/ssc_chelsea_fc_v_tottenham_hotspur" target="_blank" rel="noopener">SSC: Chelsea F.C. v Tottenham Hotspur</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 1 Aug 2026</div>
+        <div><strong>Time:</strong> 5:45 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
       <h2><a href="https://www.smithsalternative.com/events/kial-malone-98508?d=1%2F08%2F2026+6%3A00%3A00+PM" target="_blank" rel="noopener">Kial Malone</a></h2>
       <div class="meta">
@@ -4036,6 +4097,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrl_round_22_wests_tigers_vs_eels" target="_blank" rel="noopener">NRL Round 22 – Wests Tigers vs Eels</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 2 Aug 2026</div>
+        <div><strong>Time:</strong> 4:05 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
       <h2><a href="https://www.smithsalternative.com/events/dancing-room-only-87963?d=2%2F08%2F2026+4%3A30%3A00+PM" target="_blank" rel="noopener">Dancing Room Only</a></h2>
       <div class="meta">
@@ -4194,18 +4267,6 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
 
     <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
       <h2><a href="https://www.smithsalternative.com/events/smith-s-jazz-jam-93807?d=4%2F08%2F2026+6%3A30%3A00+PM" target="_blank" rel="noopener">Smith&#x27;s Jazz Jam</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Tue 4 Aug 2026</div>
-        <div><strong>Time:</strong> 6:30 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/smith-s-scribblers-after-dark-99306?d=4%2F08%2F2026+6%3A30%3A00+PM" target="_blank" rel="noopener">Smith&#x27;s Scribblers After Dark Evening Life Drawing Session</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Tue 4 Aug 2026</div>
         <div><strong>Time:</strong> 6:30 PM</div>
@@ -4576,6 +4637,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/laufey" target="_blank" rel="noopener">Laufey</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 7 &amp; 8 August 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="unknown">
       <h2><a href="https://www.enmoretheatre.com.au/event/chat-10-looks-3-live-2026/" target="_blank" rel="noopener">CHAT 10 LOOKS 3: LIVE 2026</a></h2>
       <div class="meta">
@@ -4612,6 +4685,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Canberra" data-venue="One22" data-status="available">
+      <h2><a href="https://www.intix.com.au/event/tarkno/information" target="_blank" rel="noopener">Tarkno</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 7 Aug 2026</div>
+        
+        <div><strong>Venue:</strong> One22</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="The Baso" data-status="available">
       <h2><a href="https://thebaso.oztix.com.au/Default.aspx?Event=243836" target="_blank" rel="noopener">Charlie Farmer On Tour</a></h2>
       <div class="meta">
@@ -4621,6 +4706,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Sydney Cricket Ground" data-status="unknown">
+      <h2><a href="https://www.sydneycricketground.com.au/events/n2026_afl_round_22__sydney_swans_v_port_adelaide_f" target="_blank" rel="noopener">2026 AFL Round 22: Sydney Swans v Port Adelaide FC* at the S</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 8 Aug 2026</div>
+        <div><strong>Time:</strong> 2:15 PM</div>
+        <div><strong>Venue:</strong> Sydney Cricket Ground</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -4727,6 +4824,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 7:30 PM</div>
         <div><strong>Venue:</strong> Anita&#x27;s Theatre</div>
         <div><strong>City:</strong> Wollongong</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
+      <h2><a href="https://events.humanitix.com/kapital-kultura-2" target="_blank" rel="noopener">Kapital Kultura 2</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 8 Aug 2026</div>
+        <div><strong>Time:</strong> 7:30 PM</div>
+        <div><strong>Venue:</strong> Dissent Cafe and Bar</div>
+        <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -4909,6 +5018,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Wollongong</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/massive-attack" target="_blank" rel="noopener">Massive Attack</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 9 August 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -5117,6 +5238,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     
 
     <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
+      <h2><a href="https://www.smithsalternative.com/events/lysistrata-a-monologue-99969?d=12%2F08%2F2026+6%3A00%3A00+PM" target="_blank" rel="noopener">Lysistrata: A Monologue</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Wed 12 Aug 2026</div>
+        <div><strong>Time:</strong> 6:00 PM</div>
+        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
       <h2><a href="https://www.smithsalternative.com/events/little-school-of-urth-93836?d=12%2F08%2F2026+6%3A00%3A00+PM" target="_blank" rel="noopener">The Little School of Urth Philosophical Conversation</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Wed 12 Aug 2026</div>
@@ -5224,6 +5357,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
+      <h2><a href="https://www.smithsalternative.com/events/lysistrata-a-monologue-99975?d=13%2F08%2F2026+6%3A00%3A00+PM" target="_blank" rel="noopener">Lysistrata: A Monologue</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 13 Aug 2026</div>
+        <div><strong>Time:</strong> 6:00 PM</div>
+        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Llewellyn Hall" data-status="unknown">
       <h2><a href="https://llewellynhall.com.au/events/nicolas-altstaedt-thomas-dunford" target="_blank" rel="noopener">Nicolas Altstaedt &amp; Thomas Dunford</a></h2>
       <div class="meta">
@@ -5231,6 +5376,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 7:00 PM</div>
         <div><strong>Venue:</strong> Llewellyn Hall</div>
         <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrl_round_24_panthers_vs_roosters" target="_blank" rel="noopener">NRL Round 24 – Panthers vs Roosters</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 13 Aug 2026</div>
+        <div><strong>Time:</strong> 7:50 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -5332,6 +5489,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrl_round_24__bulldogs_vs_rabbitohs" target="_blank" rel="noopener">NRL Round 24 – Bulldogs vs Rabbitohs</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 14 Aug 2026</div>
+        <div><strong>Time:</strong> 8:00 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Liberty Hall" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/1tbsp-bubble-tour/197010" target="_blank" rel="noopener">1tbsp Bubble Tour</a></h2>
       <div class="meta">
@@ -5404,6 +5573,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Canberra" data-venue="One22" data-status="available">
+      <h2><a href="https://www.intix.com.au/event/burnr3/information" target="_blank" rel="noopener">BURNR</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 14 Aug 2026</div>
+        
+        <div><strong>Venue:</strong> One22</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="The Baso" data-status="available">
       <h2><a href="https://thebaso.oztix.com.au/Default.aspx?Event=238981" target="_blank" rel="noopener">Frenzal Rhomb - Sans Souci 23rd Anniversary Tour</a></h2>
       <div class="meta">
@@ -5447,6 +5628,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 2:30 PM</div>
         <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
         <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrlw_round_7__eels_vs_wests_tigers" target="_blank" rel="noopener">NRLW Round 7 – Eels vs Wests Tigers</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 15 Aug 2026</div>
+        <div><strong>Time:</strong> 3:15 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrl_round_24_eels_vs_cowboys" target="_blank" rel="noopener">NRL Round 24 – Eels vs Cowboys</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 15 Aug 2026</div>
+        <div><strong>Time:</strong> 5:30 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -5644,6 +5849,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrlw_round_7__wests_tigers_vs_warriors" target="_blank" rel="noopener">NRL Round 24 – Wests Tigers vs Dragons</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 16 Aug 2026</div>
+        <div><strong>Time:</strong> 1:45 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrl_round_24__wests_tigers_vs_dragons" target="_blank" rel="noopener">NRL Round 24 – Wests Tigers vs Dragons</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 16 Aug 2026</div>
+        <div><strong>Time:</strong> 4:05 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Wollongong" data-venue="La La La&#x27;s" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/sunday-honey-w-space-ages-free-entry/197074" target="_blank" rel="noopener">Sunday Honey w/ Space &amp; Ages | FREE ENTRY</a></h2>
       <div class="meta">
@@ -5812,18 +6041,6 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/django-jam-93671?d=19%2F08%2F2026+7%3A00%3A00+PM" target="_blank" rel="noopener">Django Jam</a></h2>
-      <div class="meta">
-        <div><strong>Date:</strong> Wed 19 Aug 2026</div>
-        <div><strong>Time:</strong> 7:00 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
-      </div>
-      <span class="status status-unknown">unknown</span>
-    </article>
-    
-
     <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
       <h2><a href="https://tiktokentcent.com/event/jeff-dunham-artificial-intelligence" target="_blank" rel="noopener">Jeff Dunham: Artificial Intelligence</a></h2>
       <div class="meta">
@@ -5836,13 +6053,13 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
-    <article class="card" data-city="Canberra" data-venue="Smith&#x27;s Alternative" data-status="unknown">
-      <h2><a href="https://www.smithsalternative.com/events/smith-s-scribblers-73943?d=20%2F08%2F2026+12%3A30%3A00+PM" target="_blank" rel="noopener">Smith&#x27;s Scribblers Lunchtime Life Drawing</a></h2>
+    <article class="card" data-city="Sydney" data-venue="Sydney Cricket Ground" data-status="unknown">
+      <h2><a href="https://www.sydneycricketground.com.au/events/n2026_afl_round_24__sydney_swans_v_north_melbourne" target="_blank" rel="noopener">2026 AFL Round 24: Sydney Swans v North Melbourne FC* at the</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 20 Aug 2026</div>
-        <div><strong>Time:</strong> 12:30 PM</div>
-        <div><strong>Venue:</strong> Smith&#x27;s Alternative</div>
-        <div><strong>City:</strong> Canberra</div>
+        <div><strong>Time:</strong> 12:00 AM</div>
+        <div><strong>Venue:</strong> Sydney Cricket Ground</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -5980,6 +6197,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/karan-aujla" target="_blank" rel="noopener">Karan Aujla</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 21 August 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/josh-thomas-2026/" target="_blank" rel="noopener">Josh Thomas – jiggle jiggle</a></h2>
       <div class="meta">
@@ -6088,6 +6317,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrl_round_25__rabbitohs_vs_warriors" target="_blank" rel="noopener">NRL Round 25 – Rabbitohs vs Warriors at Accor Stadium</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 22 Aug 2026</div>
+        <div><strong>Time:</strong> 5:30 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Oxford Art Factory - Main Room" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/montaigne-glorious-heights-10th-anniversary-tour/193069" target="_blank" rel="noopener">Montaigne - Glorious Heights 10th Anniversary Tour</a></h2>
       <div class="meta">
@@ -6193,6 +6434,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="available">
+      <h2><a href="https://www.factorytheatre.com.au/event/takashi-wakasugi-encore-the-factory-theatre/" target="_blank" rel="noopener">TAKASHI WAKASUGI – ENCORE @ THE FACTORY THEATRE</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 22 Aug 2026</div>
+        
+        <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Canberra" data-venue="Gang Gang Cafe" data-status="available">
+      <h2><a href="https://events.humanitix.com/fruit-bats-usa/tickets" target="_blank" rel="noopener">Fruit Bats (USA) solo</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 22 Aug 2026</div>
+        
+        <div><strong>Venue:</strong> Gang Gang Cafe</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-available">available</span>
     </article>
     
 
@@ -6328,6 +6593,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="unknown">
+      <h2><a href="https://www.metrotheatre.com.au/event/everglow/" target="_blank" rel="noopener">EVERGLOW</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 23 Aug 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Sydney Opera House" data-status="unknown">
       <h2><a href="https://www.sydneyoperahouse.com/contemporary-music-dance/rhythms-lanka" target="_blank" rel="noopener">Rhythms of Lanka</a></h2>
       <div class="meta">
@@ -6436,6 +6713,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
+      <h2><a href="https://events.humanitix.com/the-dandy-buzzkills-dissent" target="_blank" rel="noopener">The Dandy Buzzkills (I Presume) EP Tour | Canberra | w/ Goese, Bon Echo, Delphia</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 27 Aug 2026</div>
+        <div><strong>Time:</strong> 7:30 PM</div>
+        <div><strong>Venue:</strong> Dissent Cafe and Bar</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/liam-cooper-2026/" target="_blank" rel="noopener">Liam Cooper’s King of the Keys</a></h2>
       <div class="meta">
@@ -6481,6 +6770,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Queanbeyan</div>
       </div>
       <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Wollongong" data-venue="La La La&#x27;s" data-status="available">
+      <h2><a href="https://www.moshtix.com.au/v2/event/the-dandy-buzzkills-i-presume-ep-tour-wollongong-w-dirty-merchants-silvia/197545" target="_blank" rel="noopener">The Dandy Buzzkills (I Presume) EP Tour | Wollongong w/ Dirty Merchants // Silvia Lane // Postcards from Pluto</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 28 Aug 2026</div>
+        <div><strong>Time:</strong> 7:00 PM</div>
+        <div><strong>Venue:</strong> La La La&#x27;s</div>
+        <div><strong>City:</strong> Wollongong</div>
+      </div>
+      <span class="status status-available">available</span>
     </article>
     
 
@@ -6551,6 +6852,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 8:00 PM</div>
         <div><strong>Venue:</strong> Belco Arts</div>
         <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrl_round_26_panthers_vs_bulldogs" target="_blank" rel="noopener">NRL Round 26 – Panthers vs Bulldogs</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 28 Aug 2026</div>
+        <div><strong>Time:</strong> 8:00 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/alex-warren" target="_blank" rel="noopener">Alex Warren</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 28, 29 &amp; 30 August 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -6844,6 +7169,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrlw_round_9__eels_vs_broncos" target="_blank" rel="noopener">NRLW Round 9 – Eels v Broncos</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 30 Aug 2026</div>
+        <div><strong>Time:</strong> 1:45 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrl_round_26_eels_vs_sharks" target="_blank" rel="noopener">NRL Round 26 – Eels v Sharks</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 30 Aug 2026</div>
+        <div><strong>Time:</strong> 4:05 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Wollongong" data-venue="Anita&#x27;s Theatre" data-status="unknown">
       <h2><a href="https://www.ticketmaster.com.au/liam-coopers-king-of-the-keys-thirroul-30-08-2026/event/130064A4AFF63AF3" target="_blank" rel="noopener">Liam Cooper&#x27;s King of the Keys</a></h2>
       <div class="meta">
@@ -6949,6 +7298,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrl_round_27__bulldogs_vs_broncos" target="_blank" rel="noopener">NRL Round 27 – Bulldogs vs Broncos</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 3 Sep 2026</div>
+        <div><strong>Time:</strong> 7:50 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -7085,7 +7446,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     
 
     <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
-      <h2><a href="https://www.factorytheatre.com.au/event/madeleine-stokes-business/" target="_blank" rel="noopener">MADELEINE STOKES – BUSINESS</a></h2>
+      <h2><a href="https://www.factorytheatre.com.au/event/madeleine-stokes-business/" target="_blank" rel="noopener">MADDIE STOKES – BUSINESS</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 3 Sep 2026 - Fri 4 Sep 2026</div>
         
@@ -7337,6 +7698,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     
 
     <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
+      <h2><a href="https://www.factorytheatre.com.au/event/bar-bombay-2/" target="_blank" rel="noopener">BAR BOMBAY</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 5 Sep 2026</div>
+        
+        <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
       <h2><a href="https://www.factorytheatre.com.au/event/chris-mathews-darby-perfectly-queer/" target="_blank" rel="noopener">CHRIS MATTHEWS-DARBY – PERFECTLY QUEER</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Sat 5 Sep 2026 - Sun 6 Sep 2026</div>
@@ -7528,6 +7901,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrl_round_27_panthers_vs_wests_tigers" target="_blank" rel="noopener">NRL Round 27 – Panthers vs Wests Tigers</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 6 Sep 2026</div>
+        <div><strong>Time:</strong> 4:05 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="GIO Stadium Canberra" data-status="unknown">
       <h2><a href="https://giostadiumcanberra.com.au/gio-stadium-event/nrlw-raiders-v-eels-rd10/" target="_blank" rel="noopener">NRLW 2026 – Raiders v Eels</a></h2>
       <div class="meta">
@@ -7672,6 +8057,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/electric-callboy" target="_blank" rel="noopener">Electric Callboy</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 10 September 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/boy-and-bear-2026/" target="_blank" rel="noopener">Boy &amp; Bear – Tripping Over Time Regional Tour</a></h2>
       <div class="meta">
@@ -7793,6 +8190,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     
 
     <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
+      <h2><a href="https://tiktokentcent.com/event/1-mohamed-ramadan-sydney/" target="_blank" rel="noopener">#1 Mohamed Ramadan – Sydney</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 11 September 2026</div>
+        
+        <div><strong>Venue:</strong> ICC Sydney</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
       <h2><a href="https://iccsydney.com.au/events/ausfitness-expo-2026/" target="_blank" rel="noopener">AusFitness Expo</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Fri 11 - 13 September 2026</div>
@@ -7822,6 +8231,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Date:</strong> Fri 11 Sep 2026</div>
         
         <div><strong>Venue:</strong> Manning Bar</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/n2026_nrlw_round_11__eels_vs_cowboys" target="_blank" rel="noopener">NRLW Round 11 – Eels vs Cowboys</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 12 Sep 2026</div>
+        <div><strong>Time:</strong> 12:00 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
@@ -8201,7 +8622,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     
 
     <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
-      <h2><a href="https://www.factorytheatre.com.au/event/nonsense-nonsensability/" target="_blank" rel="noopener">NONSENSE &amp; NONSENSABILITY</a></h2>
+      <h2><a href="https://www.factorytheatre.com.au/event/nonsense-nonsensability/" target="_blank" rel="noopener">NONSENSE &amp; SENSIBILITY</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Thu 17 Sep 2026 - Fri 18 Sep 2026</div>
         
@@ -8413,6 +8834,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/jason-derulo" target="_blank" rel="noopener">Jason Derulo</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 19 September 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -8662,6 +9095,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Date:</strong> Sun 20 September 2026</div>
         
         <div><strong>Venue:</strong> ICC Sydney</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/fortuna-one-summit" target="_blank" rel="noopener">Fortuna One Summit</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 22 &amp; 23 September 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
@@ -8941,6 +9386,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
+      <h2><a href="https://tiktokentcent.com/event/mamamoo/" target="_blank" rel="noopener">MAMAMOO</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 25 September 2026</div>
+        
+        <div><strong>Venue:</strong> ICC Sydney</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -9316,6 +9773,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/conan-gray" target="_blank" rel="noopener">Conan Gray</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 1 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/hannah-ferguson-2026/" target="_blank" rel="noopener">Cheek Live: State of the Nation with Hannah Ferguson,</a></h2>
       <div class="meta">
@@ -9515,6 +9984,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 8:30 PM</div>
         <div><strong>Venue:</strong> Anita&#x27;s Theatre</div>
         <div><strong>City:</strong> Wollongong</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/noah-kahan" target="_blank" rel="noopener">Noah Kahan</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 2, 3, 5 &amp; 6 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -9772,6 +10253,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_nrl_nrlw_grand_finals" target="_blank" rel="noopener">2026 NRL and NRLW Grand Finals</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 4 Oct 2026</div>
+        <div><strong>Time:</strong> 1:00 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Dissent Cafe and Bar" data-status="unknown">
       <h2><a href="https://events.humanitix.com/new-portrait-tour-betcover-australia-2026" target="_blank" rel="noopener">new portrait tour - betcover!! Australia 2026</a></h2>
       <div class="meta">
@@ -10012,6 +10505,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/men_s_rugby_world_cup_2027__new_zealand_v_australi" target="_blank" rel="noopener">Men&#x27;s Rugby World Cup 2027: New Zealand v Australia at Stadi</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 9 Oct 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/olivia-dean" target="_blank" rel="noopener">Olivia Dean</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 9 &amp; 10 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/burn-the-floor-2026/" target="_blank" rel="noopener">Burn The Floor – Luminous</a></h2>
       <div class="meta">
@@ -10093,6 +10610,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Wollongong</div>
       </div>
       <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/monster_jam_world_tour_2026" target="_blank" rel="noopener">Monster Jam returns to Accor Stadium October 10.</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 10 Oct 2026</div>
+        <div><strong>Time:</strong> 1:30 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
     </article>
     
 
@@ -10300,6 +10829,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/xg" target="_blank" rel="noopener">XG</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Wed 14 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
       <h2><a href="https://www.factorytheatre.com.au/event/nathan-evans/" target="_blank" rel="noopener">NATHAN EVANS &amp; THE SAINT PHNX BAND</a></h2>
       <div class="meta">
@@ -10384,6 +10925,54 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/rugby_league_world_cup_2026__samoa_v_france" target="_blank" rel="noopener">Rugby League World Cup 2026: Samoa v France at CommBank Stad</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 16 Oct 2026</div>
+        <div><strong>Time:</strong> 5:45 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/women_s_rugby_league_world_cup_2026_australia_v_samoa" target="_blank" rel="noopener">Women&#x27;s Rugby League World Cup 2026: Australia v Samoa at Co</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 16 Oct 2026</div>
+        <div><strong>Time:</strong> 5:45 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/men_s_rugby_world_cup_2027__england_v_wales" target="_blank" rel="noopener">Men&#x27;s Rugby World Cup 2027: England v Wales at Stadium Austr</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 16 Oct 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/avenged-sevenfold" target="_blank" rel="noopener">Avenged Sevenfold</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 16 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Crowbar Sydney" data-status="available">
       <h2><a href="https://crowbarsyd.oztix.com.au/Default.aspx?Event=240651" target="_blank" rel="noopener">Monte Loco Rides Again... Melbourne Ska Orchestra</a></h2>
       <div class="meta">
@@ -10451,6 +11040,42 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         
         <div><strong>Venue:</strong> The Q</div>
         <div><strong>City:</strong> Queanbeyan</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/women_s_internationals_wallaroos_vs_scotland_women" target="_blank" rel="noopener">2026 Bledisloe Cup: Wallabies v All Blacks at Accor Stadium</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 17 Oct 2026</div>
+        <div><strong>Time:</strong> 1:00 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/n2026_bledisloe_cup_wallabies_v_all_blacks" target="_blank" rel="noopener">2026 Bledisloe Cup: Wallabies v All Blacks at Accor Stadium</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 17 Oct 2026</div>
+        <div><strong>Time:</strong> 1:00 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Wollongong" data-venue="WIN Entertainment Centre" data-status="unknown">
+      <h2><a href="https://www.wsec.com.au/events/talk2mebro_gala_2026" target="_blank" rel="noopener">The Great Talk2MeBro Gala</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 17 Oct 2026</div>
+        <div><strong>Time:</strong> 6:30 PM</div>
+        <div><strong>Venue:</strong> WIN Entertainment Centre</div>
+        <div><strong>City:</strong> Wollongong</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -10648,6 +11273,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/tame-impala" target="_blank" rel="noopener">Tame Impala</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Mon 19, 20 &amp; 21 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
       <h2><a href="https://www.factorytheatre.com.au/event/paradise-lost/" target="_blank" rel="noopener">PARADISE LOST</a></h2>
       <div class="meta">
@@ -10744,6 +11381,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/louis-tomlinson" target="_blank" rel="noopener">Louis Tomlinson</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 22 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/the-high-kings-2026/" target="_blank" rel="noopener">The High Kings: Rocky Road To Dublin 2026 Tour</a></h2>
       <div class="meta">
@@ -10792,6 +11441,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/rugby_league_world_cup_2026__tonga_v_lebanon" target="_blank" rel="noopener">Rugby League World Cup 2026: Samoa v France at CommBank Stad</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 23 Oct 2026</div>
+        <div><strong>Time:</strong> 5:50 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/women_s_rugby_league_world_cup_2026__samoa_v_wales" target="_blank" rel="noopener">Women&#x27;s Rugby League World Cup 2026: Samoa v Wales at CommBa</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 23 Oct 2026</div>
+        <div><strong>Time:</strong> 5:50 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Liberty Hall" data-status="available">
       <h2><a href="https://www.moshtix.com.au/v2/event/la-dispute/191907" target="_blank" rel="noopener">La Dispute</a></h2>
       <div class="meta">
@@ -10825,6 +11498,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Wollongong</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/zara-larsson" target="_blank" rel="noopener">Zara Larsson</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 23 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -10873,6 +11558,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/hilary-duff" target="_blank" rel="noopener">Hilary Duff</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 24 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -11056,6 +11753,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/hans-zimmer" target="_blank" rel="noopener">Hans Zimmer</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Wed 28 &amp; 29 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="unknown">
       <h2><a href="https://www.enmoretheatre.com.au/event/a-sound-life-charity-show-feat-dev-premal-and-miten/" target="_blank" rel="noopener">A SOUND LIFE CHARITY SHOW: FEAT DEV PREMAL AND MITEN</a></h2>
       <div class="meta">
@@ -11200,6 +11909,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Canberra" data-venue="UC Refectory" data-status="available">
+      <h2><a href="https://www.moshtix.com.au/v2/event/peking-duk-‘paradise’-album-tour/197814" target="_blank" rel="noopener">Peking Duk ‘Paradise’ Album Tour</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 30 Oct 2026</div>
+        <div><strong>Time:</strong> 7:30 PM</div>
+        <div><strong>Venue:</strong> UC Refectory</div>
+        <div><strong>City:</strong> Canberra</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
     <article class="card" data-city="Wollongong" data-venue="WIN Sports &amp; Entertainment Centres" data-status="unknown">
       <h2><a href="https://www.wsec.com.au/events/rugby_league_world_cup_2026__england_v_png" target="_blank" rel="noopener">Men&#x27;s Rugby League World Cup 2026: England v PNG</a></h2>
       <div class="meta">
@@ -11207,6 +11928,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 8:00 PM</div>
         <div><strong>Venue:</strong> WIN Sports &amp; Entertainment Centres</div>
         <div><strong>City:</strong> Wollongong</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/men_s_rugby_world_cup_2027__qf1___winner_r16__2__v" target="_blank" rel="noopener">Men&#x27;s Rugby World Cup 2027: QF1 - Winner R16 (2) v Winner R1</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 30 Oct 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/5-seconds-of-summer" target="_blank" rel="noopener">5 Seconds of Summer</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 30 October 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -11242,6 +11987,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Date:</strong> Fri 30 Oct 2026</div>
         
         <div><strong>Venue:</strong> Enmore Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="unknown">
+      <h2><a href="https://www.metrotheatre.com.au/event/astels/" target="_blank" rel="noopener">ASTELS</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 30 Oct 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
@@ -11320,6 +12077,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/men_s_rugby_world_cup_2027__qf4___winner_r16__7__v" target="_blank" rel="noopener">Men&#x27;s Rugby World Cup 2027: QF4 - Winner R16 (7) v Winner R1</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 31 Oct 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/lawrence-mooney-2026/" target="_blank" rel="noopener">Lawrence Mooney – Full Moon Party</a></h2>
       <div class="meta">
@@ -11344,12 +12113,60 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Metro Theatre" data-status="wait list">
+      <h2><a href="https://www.metrotheatre.com.au/event/buffalo-traffic-jam/" target="_blank" rel="noopener">BUFFALO TRAFFIC JAM</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 31 Oct 2026 - Sun 1 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Metro Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-wait-list">wait list</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Sydney Coliseum Theatre" data-status="unknown">
       <h2><a href="https://premier.ticketek.com.au/shows/Show.aspx?sh=HINDSCC26" target="_blank" rel="noopener">HSCC Live in 2026</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Sat 31 Oct 2026</div>
         
         <div><strong>Venue:</strong> Sydney Coliseum Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/rugby_league_world_cup_2026__lebanon_v_france" target="_blank" rel="noopener">Rugby League World Cup 2026: Lebanon v France at CommBank St</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 1 Nov 2026</div>
+        <div><strong>Time:</strong> 3:45 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/rugby_league_world_cup_2026__tonga_v_samoa" target="_blank" rel="noopener">Rugby League World Cup 2026: Tonga v Samoa at CommBank Stadi</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 1 Nov 2026</div>
+        <div><strong>Time:</strong> 3:45 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="CommBank Stadium" data-status="unknown">
+      <h2><a href="https://www.commbankstadium.com.au/events/women_s_rugby_league_world_cup_2026__australia_v_wales" target="_blank" rel="noopener">Women&#x27;s Rugby League World Cup 2026: Australia v TBC at Comm</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 1 Nov 2026</div>
+        <div><strong>Time:</strong> 3:45 PM</div>
+        <div><strong>Venue:</strong> CommBank Stadium</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
@@ -11464,6 +12281,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/men_s_rugby_world_cup_2027__sf1___winner_qf1_v_win" target="_blank" rel="noopener">Men&#x27;s Rugby World Cup 2027: SF1 - Winner QF1 v Winner QF2 at</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 5 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="unknown">
       <h2><a href="https://www.enmoretheatre.com.au/event/less-than-jake-2/" target="_blank" rel="noopener">LESS THAN JAKE</a></h2>
       <div class="meta">
@@ -11567,6 +12396,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 7:30 PM</div>
         <div><strong>Venue:</strong> WIN Sports &amp; Entertainment Centres</div>
         <div><strong>City:</strong> Wollongong</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/men_s_rugby_world_cup_2027__sf2___winner_qf3_v_win" target="_blank" rel="noopener">Men&#x27;s Rugby World Cup 2027: SF2 - Winner QF3 v Winner QF4 at</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 6 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -11728,6 +12569,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="UNSW Roundhouse" data-status="available">
+      <h2><a href="https://www.moshtix.com.au/v2/event/peking-duk-‘paradise’-album-tour-sydney/197802" target="_blank" rel="noopener">Peking Duk ‘Paradise’ Album Tour Sydney</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 7 Nov 2026</div>
+        <div><strong>Time:</strong> 7:30 PM</div>
+        <div><strong>Venue:</strong> UNSW Roundhouse</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="unknown">
       <h2><a href="https://www.enmoretheatre.com.au/event/dance-gavin-dance/" target="_blank" rel="noopener">DANCE GAVIN DANCE</a></h2>
       <div class="meta">
@@ -11848,6 +12701,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/foo_fighters_take_cover" target="_blank" rel="noopener">Foo Fighters Take Cover Tour at Accor Stadium</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 10 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/charlie-puth" target="_blank" rel="noopener">Charlie Puth</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 10 November 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
       <h2><a href="https://tiktokentcent.com/event/greg-davies/" target="_blank" rel="noopener">Greg Davies</a></h2>
       <div class="meta">
@@ -11917,6 +12794,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="unknown">
+      <h2><a href="https://www.accorstadium.com.au/events/men_s_rugby_world_cup_2027__bronze_final" target="_blank" rel="noopener">Men&#x27;s Rugby World Cup 2027: Bronze Final at Stadium Australi</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 12 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -12028,6 +12917,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/men_s_rugby_world_cup_2027__final___sf1_winner_v_s" target="_blank" rel="noopener">Men&#x27;s Rugby World Cup 2027: Rugby World Cup Final at Stadium</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 13 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/khalid" target="_blank" rel="noopener">Khalid</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 13 November 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/the-nutcracker-2026/" target="_blank" rel="noopener">Victorian State Ballet: The Nutcracker</a></h2>
       <div class="meta">
@@ -12131,6 +13044,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Time:</strong> 8:00 PM</div>
         <div><strong>Venue:</strong> Anita&#x27;s Theatre</div>
         <div><strong>City:</strong> Wollongong</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/robbie_williams_britpop_world_tour_sydney" target="_blank" rel="noopener">Robbie Williams BRITPOP World Tour</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 14 Nov 2026</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/joji" target="_blank" rel="noopener">Joji</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 14 November 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
     </article>
@@ -12244,7 +13181,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
-    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="unknown">
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
       <h2><a href="https://www.enmoretheatre.com.au/event/dan-and-phil/" target="_blank" rel="noopener">DAN AND PHIL</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Mon 16 Nov 2026 - Tue 17 Nov 2026</div>
@@ -12252,7 +13189,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Venue:</strong> Enmore Theatre</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
-      <span class="status status-unknown">unknown</span>
+      <span class="status status-wait-list">wait list</span>
     </article>
     
 
@@ -12448,6 +13385,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/robyn" target="_blank" rel="noopener">Robyn</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 21 November 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
       <h2><a href="https://www.factorytheatre.com.au/event/frank-sultana-blues-bash-5-x-freekin-weekends/" target="_blank" rel="noopener">FRANK SULTANA BLUES BASH 5 X FREEKIN WEEKENDS</a></h2>
       <div class="meta">
@@ -12625,6 +13574,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Canberra</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/schools-specatcular" target="_blank" rel="noopener">Schools Spectacular</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 27 &amp; 28 November 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -12844,6 +13805,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Sydney Cricket Ground" data-status="unknown">
+      <h2><a href="https://www.sydneycricketground.com.au/events/mens_t20i_series__australia_v_england" target="_blank" rel="noopener">Mens T20I Series: Australia v England at the Sydney Cricket</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 29 Nov 2026</div>
+        <div><strong>Time:</strong> 7:15 PM</div>
+        <div><strong>Venue:</strong> Sydney Cricket Ground</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/kim-wilde-2026/" target="_blank" rel="noopener">The Kim Wilde Closer Tour</a></h2>
       <div class="meta">
@@ -12862,6 +13835,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Date:</strong> Sun 29 Nov 2026</div>
         
         <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/j-cole" target="_blank" rel="noopener">J Cole</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 1 &amp; 2 December 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
@@ -12892,7 +13877,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
-    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="unknown">
+    <article class="card" data-city="Sydney" data-venue="Enmore Theatre" data-status="wait list">
       <h2><a href="https://www.enmoretheatre.com.au/event/im-grand-mam/" target="_blank" rel="noopener">I&#x27;M GRAND MAM</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Wed 2 Dec 2026</div>
@@ -12900,7 +13885,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Venue:</strong> Enmore Theatre</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
-      <span class="status status-unknown">unknown</span>
+      <span class="status status-wait-list">wait list</span>
     </article>
     
 
@@ -12964,6 +13949,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="ICC Sydney" data-status="unknown">
+      <h2><a href="https://tiktokentcent.com/event/boyziimen/" target="_blank" rel="noopener">Boyz II Men</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 04 December 2026</div>
+        
+        <div><strong>Venue:</strong> ICC Sydney</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Manning Bar" data-status="unknown">
       <h2><a href="https://www.manningbar.com/event/hugh-cornwell-2/" target="_blank" rel="noopener">HUGH CORNWELL</a></h2>
       <div class="meta">
@@ -13009,6 +14006,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/gabriel-iglesias" target="_blank" rel="noopener">Gabriel Iglesias</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 5 December 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -13156,6 +14165,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/harry_styles_together_together_tour_2026" target="_blank" rel="noopener">Harry Styles: Together, Together! Tour 2026</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 12 Dec 2026</div>
+        <div><strong>Time:</strong> 5:00 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Factory Theatre" data-status="unknown">
       <h2><a href="https://www.factorytheatre.com.au/event/the-portuguese-kids/" target="_blank" rel="noopener">THE PORTUGUESE KIDS</a></h2>
       <div class="meta">
@@ -13186,6 +14207,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Date:</strong> Sat 12 Dec 2026</div>
         
         <div><strong>Venue:</strong> Sydney Opera House</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/harry_styles_together_together_tour_2026_show_2" target="_blank" rel="noopener">Harry Styles: Together, Together! Tour 2026</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 13 Dec 2026</div>
+        <div><strong>Time:</strong> 5:00 PM</div>
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/babymonster" target="_blank" rel="noopener">BABYMONSTER</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 13 December 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
@@ -13240,6 +14285,30 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/the-wiggles-2" target="_blank" rel="noopener">The Wiggles</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 19 December 2026</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Sydney Cricket Ground" data-status="unknown">
+      <h2><a href="https://www.sydneycricketground.com.au/events/n2027_new_year_s_test__australia_v_new_zealand" target="_blank" rel="noopener">New Year&#x27;s Pink Test: Australia v England | Sydney Cricket G</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Mon 4 Jan 2027</div>
+        <div><strong>Time:</strong> 10:30 AM</div>
+        <div><strong>Venue:</strong> Sydney Cricket Ground</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Canberra" data-venue="Canberra Theatre Centre" data-status="unknown">
       <h2><a href="https://canberratheatrecentre.com.au/show/an-evening-with-david-sedaris-2027/" target="_blank" rel="noopener">An Evening with David Sedaris</a></h2>
       <div class="meta">
@@ -13285,6 +14354,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/bryson-tiller" target="_blank" rel="noopener">Bryson Tiller</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 23 January 2027</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -13396,6 +14477,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/paul-smith" target="_blank" rel="noopener">Paul Smith</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 12 February 2027</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Crowbar Sydney" data-status="available">
       <h2><a href="https://crowbarsyd.oztix.com.au/Default.aspx?Event=241376" target="_blank" rel="noopener">VNV Nation</a></h2>
       <div class="meta">
@@ -13420,12 +14513,60 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/niall-horan" target="_blank" rel="noopener">Niall Horan</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Tue 16 February 2027</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/bts_world_tour_arirang_show_1" target="_blank" rel="noopener">BTS WORLD TOUR &#x27;ARIRANG&#x27;</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 20 Feb 2027</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/simple-minds" target="_blank" rel="noopener">Simple Minds</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 20 February 2027</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Sydney" data-venue="Crowbar Sydney" data-status="available">
       <h2><a href="https://crowbarsyd.oztix.com.au/Default.aspx?Event=243824" target="_blank" rel="noopener">SUPERPUSSY 2</a></h2>
       <div class="meta">
         <div><strong>Date:</strong> Sat 20 Feb 2027</div>
         
         <div><strong>Venue:</strong> Crowbar Sydney</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-available">available</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Accor Stadium" data-status="available">
+      <h2><a href="https://www.accorstadium.com.au/events/bts_world_tour_arirang_show_2" target="_blank" rel="noopener">BTS WORLD TOUR &#x27;ARIRANG&#x27;</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sun 21 Feb 2027</div>
+        
+        <div><strong>Venue:</strong> Accor Stadium</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-available">available</span>
@@ -13453,6 +14594,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-sold-out">sold out</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/jungle" target="_blank" rel="noopener">Jungle</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Thu 4 March 2027</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
     </article>
     
 
@@ -13498,6 +14651,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Date:</strong> Thu 11 Mar 2027 - Sat 13 Mar 2027</div>
         
         <div><strong>Venue:</strong> Factory Theatre</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/evanescence" target="_blank" rel="noopener">Evanescence</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 12 March 2027</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>
@@ -13576,6 +14741,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     </article>
     
 
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/the-script" target="_blank" rel="noopener">The Script</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Sat 27 March 2027</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
     <article class="card" data-city="Queanbeyan" data-venue="The Q" data-status="unknown">
       <h2><a href="https://theq.net.au/whats-on/fleetwood-macs/" target="_blank" rel="noopener">Fleetwood Macs</a></h2>
       <div class="meta">
@@ -13642,6 +14819,18 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         <div><strong>Date:</strong> Fri 14 May 2027</div>
         
         <div><strong>Venue:</strong> Manning Bar</div>
+        <div><strong>City:</strong> Sydney</div>
+      </div>
+      <span class="status status-unknown">unknown</span>
+    </article>
+    
+
+    <article class="card" data-city="Sydney" data-venue="Afterpay Arena" data-status="unknown">
+      <h2><a href="https://afterpayarena.com.au/event/westlife" target="_blank" rel="noopener">Westlife</a></h2>
+      <div class="meta">
+        <div><strong>Date:</strong> Fri 23 July 2027</div>
+        
+        <div><strong>Venue:</strong> Afterpay Arena</div>
         <div><strong>City:</strong> Sydney</div>
       </div>
       <span class="status status-unknown">unknown</span>

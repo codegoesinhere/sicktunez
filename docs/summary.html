@@ -10,7 +10,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
-header { padding:20px 24px; background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:2; }
+header { padding:20px 24px; background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:2000; }
 h1 { margin:0 0 8px; font-size:24px; }
 nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
 nav a { color:inherit; text-decoration:none; border:1px solid var(--border); padding:5px 8px; border-radius:999px; background:var(--bg); font-size:10px; line-height:1.2; transition:background .15s ease, border-color .15s ease, transform .15s ease; }
@@ -34,7 +34,7 @@ a:hover, a:focus { text-decoration:underline; }
 .card a:hover, .card a:focus, .agenda-table a:hover, .agenda-table a:focus, td a:hover, td a:focus { color:var(--link-hover); background:var(--link-hover-bg); text-decoration:underline; text-decoration-thickness:2px; outline:2px solid transparent; border-radius:3px; }
 .group-heading { margin: 24px 0 8px; font-size: 19px; position: sticky; top: 120px; z-index: 1; background: var(--bg); padding: 8px 12px; border-bottom: 1px solid var(--border);}
 .empty { padding:16px; border:1px dashed var(--border); border-radius:12px; color:var(--muted); font-size:13px; }
-.table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:14px; }
+.table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:14px; margin-bottom: 2rem;}
 .agenda-table { table-layout:fixed; width:100%; }
 .agenda-table col.col-link { width:52%; }
 .agenda-table col.col-date { width:24%; }
@@ -67,7 +67,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
 <body id="top">
 <header>
   <h1>Summary</h1>
-  <div class="summary">1132 events. Generated 9 Jul 2026, 5:07 AM.</div>
+  <div class="summary">1231 events. Generated 10 Jul 2026, 5:26 AM.</div>
   <nav>
     <a href="summary.html">Summary</a>
     <a href="next-four-weeks-canberra-queanbeyan-t.html">CBR/QBN 4wks T</a>
@@ -77,6 +77,7 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
     <a href="index.html">All upcoming</a>
     <a href="sold-out.html">Sold out / wait list</a>
     <a href="by-location.html">By location</a>
+    <a href="maps.html">Maps</a>
     <a href="events.json">Raw JSON</a>
   </nav>
 </header>
@@ -84,7 +85,11 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
 
     <p>Can't currently capture:</p>
     <ul class="smallPls">
+        <li>AIS Arena, Canberra - <a href="https://premier.ticketek.com.au/Shows/Show.aspx?sh=AISARENA" target="_blank">Link</a></li>
         <li>Hordern Pavilion, Sydney - <a href="https://thehordern.com.au/event/" target="_blank">Link</a></li>
+        <li>Manuka Oval, Canberra - <a href="https://manukaoval.com.au/events/" target="_blank">Link</a></li>
+        <li>NFSA ARC Cinema, Canberra - <a href="https://www.nfsa.gov.au/whats-on/calendar?category=event-category-films" target="_blank">Link</a></li>
+        <li>Ocean Park Stadium, Sydney - <a href="https://premier.ticketek.com.au/shows/show.aspx?sh=SHARKPRK" target="_blank">Link</a></li>
         <li>Pot Belly Bar, Canberra - <a href="https://www.potbellybar.com.au/" target="_blank">Link</a></li>
         <li>Sydney Showground, Sydney - <a href="https://www.sydneyshowground.com.au/whats-on/?pageSize=9" target="_blank">Link</a></li>
     </ul>
@@ -101,47 +106,72 @@ ul.smallPls {font-size: 11px; padding-bottom: 15px;}
         </thead>
         <tbody>
           <tr><td>Albury</td><td>Beer DeLuxe Albury</td><td>oztix</td><td>2</td></tr>
-<tr><td>Canberra</td><td>APH - Australian Parliament House</td><td>humanitix</td><td>2</td></tr>
+<tr><td>Canberra</td><td>APH - Australian Parliament House</td><td>humanitix</td><td>1</td></tr>
 <tr><td>Canberra</td><td>APH - Members Hall</td><td>humanitix</td><td>1</td></tr>
 <tr><td>Canberra</td><td>Belco Arts</td><td>ticketsearch</td><td>18</td></tr>
-<tr><td>Canberra</td><td>Canberra Theatre Centre</td><td>canberra_theatre_centre</td><td>74</td></tr>
-<tr><td>Canberra</td><td>Dissent Cafe and Bar</td><td>humanitix</td><td>20</td></tr>
-<tr><td>Canberra</td><td>Fiction Club</td><td>intix_org</td><td>3</td></tr>
+<tr><td>Canberra</td><td>Canberra Theatre Centre</td><td>canberra_theatre_centre</td><td>73</td></tr>
+<tr><td>Canberra</td><td>Dissent Cafe and Bar</td><td>humanitix</td><td>21</td></tr>
+<tr><td>Canberra</td><td>Fiction Club</td><td>intix_org</td><td>4</td></tr>
 <tr><td>Canberra</td><td>Fun Time Pony</td><td>oztix</td><td>3</td></tr>
 <tr><td>Canberra</td><td>Gang Gang Cafe</td><td>humanitix</td><td>10</td></tr>
 <tr><td>Canberra</td><td>GIO Stadium Canberra</td><td>gio_stadium_canberra</td><td>7</td></tr>
-<tr><td>Canberra</td><td>Live at the Polo</td><td>humanitix</td><td>3</td></tr>
+<tr><td>Canberra</td><td>Live at the Polo</td><td>humanitix</td><td>2</td></tr>
 <tr><td>Canberra</td><td>Llewellyn Hall</td><td>llewellyn</td><td>11</td></tr>
-<tr><td>Canberra</td><td>One22</td><td>intix_org</td><td>1</td></tr>
+<tr><td>Canberra</td><td>One22</td><td>intix_org</td><td>3</td></tr>
 <tr><td>Canberra</td><td>Shadows</td><td>whatslively</td><td>4</td></tr>
-<tr><td>Canberra</td><td>Smith&#x27;s Alternative</td><td>smiths_alternative</td><td>129</td></tr>
+<tr><td>Canberra</td><td>Smith&#x27;s Alternative</td><td>smiths_alternative</td><td>126</td></tr>
 <tr><td>Canberra</td><td>Street Theatre - Street 1</td><td>patronbase</td><td>13</td></tr>
 <tr><td>Canberra</td><td>Street Theatre - Street 2 - Unreserved</td><td>patronbase</td><td>4</td></tr>
 <tr><td>Canberra</td><td>The Baso</td><td>oztix</td><td>30</td></tr>
 <tr><td>Canberra</td><td>UC Hub</td><td>moshtix</td><td>3</td></tr>
-<tr><td>Canberra</td><td>UC Refectory</td><td>moshtix</td><td>3</td></tr>
+<tr><td>Canberra</td><td>UC Refectory</td><td>moshtix</td><td>4</td></tr>
 <tr><td>Canberra</td><td>Vent</td><td>intix_org</td><td>3</td></tr>
-<tr><td>Queanbeyan</td><td>Royal Hotel Queanbeyan</td><td>royal_hotel_qbn</td><td>17</td></tr>
-<tr><td>Queanbeyan</td><td>The Q</td><td>ticketsearch</td><td>31</td></tr>
-<tr><td>Sydney</td><td>Crowbar Sydney</td><td>oztix</td><td>37</td></tr>
+<tr><td>Queanbeyan</td><td>Royal Hotel Queanbeyan</td><td>royal_hotel_qbn</td><td>16</td></tr>
+<tr><td>Queanbeyan</td><td>The Q</td><td>ticketsearch</td><td>29</td></tr>
+<tr><td>Sydney</td><td>Accor Stadium</td><td>venues_nsw</td><td>31</td></tr>
+<tr><td>Sydney</td><td>Afterpay Arena</td><td>qudos_bank_arena</td><td>37</td></tr>
+<tr><td>Sydney</td><td>CommBank Stadium</td><td>venues_nsw</td><td>20</td></tr>
+<tr><td>Sydney</td><td>Crowbar Sydney</td><td>oztix</td><td>38</td></tr>
 <tr><td>Sydney</td><td>Enmore Theatre</td><td>century</td><td>72</td></tr>
-<tr><td>Sydney</td><td>Factory Theatre</td><td>century</td><td>166</td></tr>
-<tr><td>Sydney</td><td>ICC Sydney</td><td>icc_sydney</td><td>71</td></tr>
-<tr><td>Sydney</td><td>Liberty Hall</td><td>moshtix</td><td>46</td></tr>
+<tr><td>Sydney</td><td>Factory Theatre</td><td>century</td><td>168</td></tr>
+<tr><td>Sydney</td><td>ICC Sydney</td><td>icc_sydney</td><td>74</td></tr>
+<tr><td>Sydney</td><td>Liberty Hall</td><td>moshtix</td><td>45</td></tr>
 <tr><td>Sydney</td><td>Manning Bar</td><td>century</td><td>25</td></tr>
-<tr><td>Sydney</td><td>Metro Theatre</td><td>century</td><td>45</td></tr>
-<tr><td>Sydney</td><td>Oxford Art Factory - Gallery Bar</td><td>moshtix</td><td>20</td></tr>
-<tr><td>Sydney</td><td>Oxford Art Factory - Main Room</td><td>moshtix</td><td>53</td></tr>
+<tr><td>Sydney</td><td>Metro Theatre</td><td>century</td><td>48</td></tr>
+<tr><td>Sydney</td><td>Oxford Art Factory - Gallery Bar</td><td>moshtix</td><td>21</td></tr>
+<tr><td>Sydney</td><td>Oxford Art Factory - Main Room</td><td>moshtix</td><td>52</td></tr>
 <tr><td>Sydney</td><td>Sydney Coliseum Theatre</td><td>sydney_coliseum</td><td>19</td></tr>
-<tr><td>Sydney</td><td>Sydney Opera House</td><td>sydney_opera_house</td><td>27</td></tr>
-<tr><td>Sydney</td><td>UNSW Roundhouse</td><td>moshtix</td><td>16</td></tr>
+<tr><td>Sydney</td><td>Sydney Cricket Ground</td><td>venues_nsw</td><td>7</td></tr>
+<tr><td>Sydney</td><td>Sydney Opera House</td><td>sydney_opera_house</td><td>26</td></tr>
+<tr><td>Sydney</td><td>UNSW Roundhouse</td><td>moshtix</td><td>17</td></tr>
 <tr><td>Wollongong</td><td>Anita&#x27;s Theatre</td><td>ticketmaster</td><td>48</td></tr>
-<tr><td>Wollongong</td><td>La La La&#x27;s</td><td>moshtix</td><td>47</td></tr>
+<tr><td>Wollongong</td><td>La La La&#x27;s</td><td>moshtix</td><td>46</td></tr>
 <tr><td>Wollongong</td><td>University of Wollongong</td><td>moshtix</td><td>6</td></tr>
 <tr><td>Wollongong</td><td>Waves Wollongong</td><td>moshtix</td><td>6</td></tr>
-<tr><td>Wollongong</td><td>WIN Entertainment Centre</td><td>wsec</td><td>8</td></tr>
+<tr><td>Wollongong</td><td>WIN Entertainment Centre</td><td>wsec</td><td>9</td></tr>
 <tr><td>Wollongong</td><td>WIN Sports &amp; Entertainment Centres</td><td>wsec</td><td>27</td></tr>
 <tr><td>Wollongong</td><td>WIN Stadium</td><td>wsec</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <h2>Configured venues with 0 results</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Venue</th>
+            <th>Scraper</th>
+            <th>Items captured</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Canberra</td><td>AIS Arena</td><td>ticketek_show</td><td>0</td></tr>
+<tr><td>Canberra</td><td>Kambri Precinct</td><td>moshtix</td><td>0</td></tr>
+<tr><td>Canberra</td><td>Manuka Oval</td><td>manuka_oval</td><td>0</td></tr>
+<tr><td>Canberra</td><td>NFSA Arc Cinema</td><td>nfsa_arc_cinema</td><td>0</td></tr>
+<tr><td>Sydney</td><td>Hordern Pavilion</td><td>hordern</td><td>0</td></tr>
         </tbody>
       </table>
     </div>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Venue maps</title>
+  <style>
+:root { color-scheme: light dark; --border:#d7d7d7; --muted:#666; --card:#fff; --bg:#f5f5f5; --text:#111; --hover:rgba(127,127,127,0.16); --active:rgba(127,127,127,0.24); --link-hover:#0645ad; --link-hover-bg:#eef5ff; }
+@media (prefers-color-scheme: dark) { :root { --border:#333; --muted:#aaa; --card:#171717; --bg:#0e0e0e; --text:#eee; --hover:rgba(255,255,255,0.12); --active:rgba(255,255,255,0.18); --link-hover:#8cc8ff; --link-hover-bg:#10283d; } }
+* { box-sizing: border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
+header { padding:20px 24px; background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:2000; }
+h1 { margin:0 0 8px; font-size:24px; }
+nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+nav a { color:inherit; text-decoration:none; border:1px solid var(--border); padding:5px 8px; border-radius:999px; background:var(--bg); font-size:10px; line-height:1.2; transition:background .15s ease, border-color .15s ease, transform .15s ease; }
+nav a:hover, nav a:focus { background:var(--hover); border-color:var(--muted); text-decoration:none; }
+nav a.active { background:var(--active); border-color:var(--muted); font-weight:700; }
+main { padding:20px; max-width:1200px; margin:0 auto; }
+a { text-underline-offset:3px; }
+a:hover, a:focus { text-decoration:underline; }
+.summary { color:var(--muted); font-size:12px; }
+.filters { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 14px; }
+.filters input, .filters select { padding:6px 8px; border:1px solid var(--border); border-radius:8px; min-width:170px; background:var(--card); color:var(--text); font-size:13px; }
+.event-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:12px; }
+.card h2 { margin:0 0 7px; font-size:16px; line-height:1.25; }
+.meta { color:var(--muted); font-size:13px; line-height:1.45; }
+.status { display:inline-block; margin-top:8px; padding:3px 7px; border-radius:999px; font-size:11px; border:1px solid var(--border); }
+.status-sold-out, .status-cancelled { background:#7f1d1d; color:white; border-color:#7f1d1d; }
+.status-wait-list { background:#92400e; color:white; border-color:#92400e; }
+.status-available { background:#14532d; color:white; border-color:#14532d; }
+.card a { color:inherit; }
+.card a:hover, .card a:focus, .agenda-table a:hover, .agenda-table a:focus, td a:hover, td a:focus { color:var(--link-hover); background:var(--link-hover-bg); text-decoration:underline; text-decoration-thickness:2px; outline:2px solid transparent; border-radius:3px; }
+.group-heading { margin: 24px 0 8px; font-size: 19px; position: sticky; top: 120px; z-index: 1; background: var(--bg); padding: 8px 12px; border-bottom: 1px solid var(--border);}
+.empty { padding:16px; border:1px dashed var(--border); border-radius:12px; color:var(--muted); font-size:13px; }
+.table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:14px; margin-bottom: 2rem;}
+.agenda-table { table-layout:fixed; width:100%; }
+.agenda-table col.col-link { width:52%; }
+.agenda-table col.col-date { width:24%; }
+.agenda-table col.col-venue { width:24%; }
+.agenda-table th, .agenda-table td { padding:5px 7px; font-size:12px; }
+.agenda-table a { color:inherit; }
+.agenda-mobile-venue { display:none; margin-top:3px; color:var(--muted); font-size:11px; line-height:1.3; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th, td { padding:7px 9px; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+th { background:var(--bg); }
+tbody tr:nth-child(even) { background:rgba(127,127,127,0.08); }
+tbody tr:nth-child(odd) { background:transparent; }
+tbody tr:hover, tbody tr:focus-within { background:var(--hover); }
+tr:last-child td { border-bottom:0; }
+@media (max-width: 700px) {
+  .agenda-table col.col-link { width:62%; }
+  .agenda-table col.col-date { width:38%; }
+  .agenda-table col.col-venue { width:0; }
+  .agenda-table th:nth-child(3), .agenda-table td:nth-child(3) { display:none; }
+  .agenda-table th, .agenda-table td { font-size:11px; padding:5px 6px; }
+  .agenda-mobile-venue { display:block; }
+  .group-heading { top:188px;}
+}
+ul.smallPls {font-size: 11px; padding-bottom: 15px;}
+.smallPls li {padding: 2px;}
+.back-to-top { position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:3; color:inherit; text-decoration:none; border:1px solid var(--border); background:var(--card); padding:7px 10px; border-radius:999px; font-size:12px; box-shadow:0 2px 10px rgba(0,0,0,.12); }
+.back-to-top:hover, .back-to-top:focus { background:var(--card); border-color:var(--muted); text-decoration:none; transform:translateX(-50%) translateY(-2px); }
+</style>
+</head>
+<body id="top">
+<header>
+  <h1>Venue maps</h1>
+  <div class="summary">40 events. Generated 10 Jul 2026, 5:26 AM.</div>
+  <nav>
+    <a href="summary.html">Summary</a>
+    <a href="next-four-weeks-canberra-queanbeyan-t.html">CBR/QBN 4wks T</a>
+    <a href="next-four-weeks-t.html">All 4wks T</a>
+    <a href="next-four-weeks-canberra-queanbeyan.html">CBR/QBN 4wks</a>
+    <a href="next-four-weeks.html">All 4wks</a>
+    <a href="index.html">All upcoming</a>
+    <a href="sold-out.html">Sold out / wait list</a>
+    <a href="by-location.html">By location</a>
+    <a href="maps.html">Maps</a>
+    <a href="events.json">Raw JSON</a>
+  </nav>
+</header>
+<main>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+.map-block { margin: 0 0 28px; }
+.map { height: 420px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--card); }
+.leaflet-popup-content { font-size: 13px; }
+</style>
+
+<section class="map-block">
+  <h2 class="group-heading">Albury</h2>
+  <div id="map-albury" class="map"></div>
+</section>
+
+<section class="map-block">
+  <h2 class="group-heading">Canberra</h2>
+  <div id="map-canberra" class="map"></div>
+</section>
+
+<section class="map-block">
+  <h2 class="group-heading">Queanbeyan</h2>
+  <div id="map-queanbeyan" class="map"></div>
+</section>
+
+<section class="map-block">
+  <h2 class="group-heading">Sydney</h2>
+  <div id="map-sydney" class="map"></div>
+</section>
+
+<section class="map-block">
+  <h2 class="group-heading">Wollongong</h2>
+  <div id="map-wollongong" class="map"></div>
+</section>
+
+<script>
+const VENUES = [{"name": "Kambri Precinct", "city": "Canberra", "lat": -35.277359, "lon": 149.1187798, "count": 0}, {"name": "UC Hub", "city": "Canberra", "lat": -35.2381312, "lon": 149.0819685, "count": 3}, {"name": "UC Refectory", "city": "Canberra", "lat": -35.2382823, "lon": 149.0832326, "count": 4}, {"name": "Liberty Hall", "city": "Sydney", "lat": -33.8937908, "lon": 151.2230129, "count": 45}, {"name": "UNSW Roundhouse", "city": "Sydney", "lat": -33.9165807, "lon": 151.2242053, "count": 17}, {"name": "Oxford Art Factory - Main Room", "city": "Sydney", "lat": -33.877912, "lon": 151.2113535, "count": 52}, {"name": "Oxford Art Factory - Gallery Bar", "city": "Sydney", "lat": -33.877912, "lon": 151.2113535, "count": 21}, {"name": "Enmore Theatre", "city": "Sydney", "lat": -33.8987552, "lon": 151.1723498, "count": 72}, {"name": "Factory Theatre", "city": "Sydney", "lat": -33.9057364, "lon": 151.1629809, "count": 168}, {"name": "Manning Bar", "city": "Sydney", "lat": -33.8868904, "lon": 151.1850472, "count": 25}, {"name": "Metro Theatre", "city": "Sydney", "lat": -33.8756438, "lon": 151.2040813, "count": 48}, {"name": "ICC Sydney", "city": "Sydney", "lat": -33.8748582, "lon": 151.1969341, "count": 74}, {"name": "The Baso", "city": "Canberra", "lat": -35.240317, "lon": 149.0565291, "count": 30}, {"name": "Fun Time Pony", "city": "Canberra", "lat": -35.2786915, "lon": 149.1277005, "count": 3}, {"name": "Crowbar Sydney", "city": "Sydney", "lat": -33.8876182, "lon": 151.1567823, "count": 38}, {"name": "Beer DeLuxe Albury", "city": "Albury", "lat": -36.0811893, "lon": 146.9128035, "count": 2}, {"name": "Hordern Pavilion", "city": "Sydney", "lat": -33.893997, "lon": 151.2216229, "count": 0}, {"name": "Sydney Coliseum Theatre", "city": "Sydney", "lat": -33.7712126, "lon": 150.8324447, "count": 19}, {"name": "Sydney Opera House", "city": "Sydney", "lat": -33.8567844, "lon": 151.2127218, "count": 26}, {"name": "GIO Stadium Canberra", "city": "Canberra", "lat": -35.2500192, "lon": 149.1001012, "count": 7}, {"name": "Royal Hotel Queanbeyan", "city": "Queanbeyan", "lat": -35.3531341, "lon": 149.2313575, "count": 16}, {"name": "Smith's Alternative", "city": "Canberra", "lat": -35.2785236, "lon": 149.1260371, "count": 126}, {"name": "Belco Arts", "city": "Canberra", "lat": -35.2359891, "lon": 149.0654345, "count": 18}, {"name": "The Q", "city": "Queanbeyan", "lat": -35.3547028, "lon": 149.2314506, "count": 29}, {"name": "Australian Parliament House", "city": "Canberra", "lat": -35.277352, "lon": 149.0801552, "count": 0}, {"name": "Gang Gang Cafe", "city": "Canberra", "lat": -35.2452262, "lon": 149.1418398, "count": 10}, {"name": "Llewellyn Hall", "city": "Canberra", "lat": -35.2805389, "lon": 149.1206834, "count": 11}, {"name": "The Street Theatre", "city": "Canberra", "lat": -35.2785758, "lon": 149.1213993, "count": 0}, {"name": "La La La's", "city": "Wollongong", "lat": -34.425351, "lon": 150.8913063, "count": 46}, {"name": "Waves Wollongong", "city": "Wollongong", "lat": -34.3891226, "lon": 150.9020552, "count": 6}, {"name": "University of Wollongong", "city": "Wollongong", "lat": -34.407306, "lon": 150.8773701, "count": 6}, {"name": "WIN Sports & Entertainment Centres", "city": "Wollongong", "lat": -34.4265113, "lon": 150.8998709, "count": 27}, {"name": "Anita's Theatre", "city": "Wollongong", "lat": -34.3148457, "lon": 150.920433, "count": 48}, {"name": "Fiction Club", "city": "Canberra", "lat": -35.2778169, "lon": 149.1290545, "count": 4}, {"name": "One22", "city": "Canberra", "lat": -35.2786989, "lon": 149.127743, "count": 3}, {"name": "Vent", "city": "Canberra", "lat": -35.2382823, "lon": 149.0832326, "count": 3}, {"name": "Shadows", "city": "Canberra", "lat": -35.279234, "lon": 149.1277071, "count": 4}, {"name": "Dissent Cafe and Bar", "city": "Canberra", "lat": -35.2791384, "lon": 149.1294315, "count": 21}, {"name": "Live at the Polo", "city": "Canberra", "lat": -35.2648973, "lon": 149.1207605, "count": 2}, {"name": "Pot Belly Bar", "city": "Canberra", "lat": -35.2418729, "lon": 149.0601357, "count": 0}];
+const MAP_CITIES = ["Albury", "Canberra", "Queanbeyan", "Sydney", "Wollongong"];
+
+const DEFAULT_CENTRES = {
+  "Albury": [-36.0808, 146.9165],
+  "Canberra": [-35.2809, 149.1300],
+  "Queanbeyan": [-35.3549, 149.2330],
+  "Sydney": [-33.8688, 151.2093],
+  "Wollongong": [-34.4278, 150.8931]
+};
+
+function slug(value) {
+  return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+for (const city of MAP_CITIES) {
+  const el = document.getElementById(`map-${slug(city)}`);
+  if (!el) continue;
+
+  const cityVenues = VENUES.filter(v => v.city === city);
+  const centre = DEFAULT_CENTRES[city] || [-35.2809, 149.1300];
+  const map = L.map(el).setView(centre, 12);
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const markers = [];
+
+  for (const venue of cityVenues) {
+    const marker = L.marker([venue.lat, venue.lon]).addTo(map);
+
+    const directionsUrl =
+        "https://www.google.com/maps/dir/?api=1&destination=" +
+        encodeURIComponent(venue.lat + "," + venue.lon);
+
+    const eventsLink = venue.count > 0
+    ? '<br><a href="by-location.html#' +
+        slug(venue.city + ' ' + venue.name) +
+        '">View events</a>'
+    : '';
+
+    marker.bindPopup(
+        '<strong>' + venue.name + '</strong><br>' +
+        venue.count + ' event' + (venue.count === 1 ? '' : 's') +
+        eventsLink +
+        '<br><a href="' + directionsUrl + '" target="_blank" rel="noopener">Get directions</a>'
+    );
+
+    markers.push(marker);
+     }
+
+  if (markers.length) {
+    const group = L.featureGroup(markers);
+    map.fitBounds(group.getBounds().pad(0.18));
+  }
+}
+</script>
+
+</main>
+<a class="back-to-top" href="#top">Back to top</a>
+<script>
+const currentFile = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('nav a').forEach(link => {
+  const hrefFile = link.getAttribute('href').split('/').pop();
+  if (hrefFile === currentFile) link.classList.add('active');
+});
+const search = document.querySelector('#search');
+const city = document.querySelector('#city');
+const status = document.querySelector('#status');
+function applyFilters() {
+  document.querySelectorAll('.card').forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const matchesSearch = !search || text.includes(search.value.toLowerCase());
+    const matchesCity = !city || !city.value || card.dataset.city === city.value;
+    const matchesStatus = !status || !status.value || card.dataset.status === status.value;
+    card.style.display = matchesSearch && matchesCity && matchesStatus ? '' : 'none';
+  });
+}
+[search, city, status].forEach(el => el && el.addEventListener('input', applyFilters));
+</script>
+</body>
+</html>
